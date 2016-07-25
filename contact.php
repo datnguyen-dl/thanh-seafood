@@ -1,5 +1,6 @@
 <?php
   include 'core/init.php';
+//protect_page();
   include 'includes/overall/header.php';
   ?>
 
@@ -24,4 +25,23 @@
         <div id="googleMap" style="width:500px;height:380px;"></div>
     </div>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter=new google.maps.LatLng(9.930587, 105.132918);
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:18,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
 <?php include 'includes/overall/footer.php'; ?>

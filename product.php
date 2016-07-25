@@ -16,37 +16,37 @@
                                     <div><img src="images/products/ca-bac-ma.jpg">
                                         <div class="pro-info">
                                             <h4>Cá Bạc Má</h4>
-                                            <a href="#">Chi tiết</a></div>
+                                            <a href="product-detail.php">Chi tiết</a></div>
                                     </div>
                                 </li>
                                 <li class="cTy-col">
                                     <div><img src="images/products/ca-thu.jpg">
                                         <div class="pro-info">
-                                            <h4>Cá Thu</h4> <a href="#">Chi tiết</a></div>
+                                            <h4>Cá Thu</h4> <a href="product-detail.php">Chi tiết</a></div>
                                     </div>
                                 </li>
                                 <li class="cTy-col">
                                     <div><img src="images/products/bach-tuoc.jpg">
                                         <div class="pro-info">
-                                            <h4>Bạch Tuộc</h4> <a href="#">Chi tiết</a></div>
+                                            <h4>Bạch Tuộc</h4> <a href="product-detail.php">Chi tiết</a></div>
                                     </div>
                                 </li>
                                 <li class="cTy-col">
                                     <div><img src="images/products/muc-ong.jpg">
                                         <div class="pro-info">
-                                            <h4>Mực Ống</h4> <a href="#">Chi tiết</a></div>
+                                            <h4>Mực Ống</h4> <a href="product-detail.php">Chi tiết</a></div>
                                     </div>
                                 </li>
                                 <li class="cTy-col">
                                     <div><img src="images/products/kho-muc.jpg">
                                         <div class="pro-info">
-                                            <h4>Khô Mực</h4> <a href="#">Chi tiết</a></div>
+                                            <h4>Khô Mực</h4> <a href="product-detail.php">Chi tiết</a></div>
                                     </div>
                                 </li>
                                 <li class="cTy-col">
                                     <div><img src="images/products/ca-bac-ma.jpg">
                                         <div class="pro-info">
-                                            <h4>Cá Bạc Má</h4> <a href="#">Chi tiết</a></div>
+                                            <h4>Cá Bạc Má</h4> <a href="product-detail.php">Chi tiết</a></div>
                                     </div>
                                 </li>
 
@@ -63,31 +63,31 @@
                                     <div><img src="images/products/Tombaccuc1.jpg">
                                         <div class="pro-info">
                                             <h4>Tôm Bắc Cực</h4>
-                                            <a href="tombaccuc-detail.html">Chi tiết</a></div>
+                                            <a href="product-detail.php">Chi tiết</a></div>
                                     </div>
                                 </li>
                                 <li class="cTy-col">
                                     <div><img src="images/products/ca-ngu.jpg">
                                         <div class="pro-info">
-                                            <h4>Cá Ngừ</h4> <a href="#">Chi tiết</a></div>
+                                            <h4>Cá Ngừ</h4> <a href="product-detail.php">Chi tiết</a></div>
                                     </div>
                                 </li>
                                 <li class="cTy-col">
                                     <div><img src="images/products/duoi-ga.jpg">
                                         <div class="pro-info">
-                                            <h4>Đuồi Gà</h4> <a href="#">Chi tiết</a></div>
+                                            <h4>Đuồi Gà</h4> <a href="product-detail.php">Chi tiết</a></div>
                                     </div>
                                 </li>
                                 <li class="cTy-col">
                                     <div><img src="images/products/ga-nuoi.jpg">
                                         <div class="pro-info">
-                                            <h4>Gà Nuôi</h4> <a href="#">Chi tiết</a></div>
+                                            <h4>Gà Nuôi</h4> <a href="product-detail.php">Chi tiết</a></div>
                                     </div>
                                 </li>
                                 <li class="cTy-col">
                                     <div><img src="images/products/ca-hoi-lat.png">
                                         <div class="pro-info">
-                                            <h4>Cá Hồi Lát</h4> <a href="#">Chi tiết</a></div>
+                                            <h4>Cá Hồi Lát</h4> <a href="product-detail.php">Chi tiết</a></div>
                                     </div>
                                 </li>
                             </ul>
