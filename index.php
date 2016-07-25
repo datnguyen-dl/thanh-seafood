@@ -2,8 +2,16 @@
   include 'core/init.php';
   include 'includes/overall/header.php';
   ?>
-  <h1>Home (index.php) toi phan 22 (3)</h1>
-  <p>just a template.</p>
+
+
+
+  <?php
+  include 'includes/home.php';
+  ?>
+
+
+
+
 
 <?php
     if(has_access($session_user_id, 1) === true){
@@ -14,5 +22,4 @@
 ?>
 
 <?php include 'includes/overall/footer.php'; ?>
-</body>
-</html>
+
