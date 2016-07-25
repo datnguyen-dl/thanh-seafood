@@ -1,0 +1,388 @@
+@import "general";
+@import "font";
+@import "color";
+@import "size";
+@import "column";
+
+body{
+	.cTy-fs14;
+	.Cty-fwN;
+	background-color: white;
+	&.home-page{
+		background-image: url(../images/bg-company-info.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+	}
+}
+
+	#top-bar{
+		padding: 5px 0;
+		background-color: @gray-dark;
+		color: white;
+		.cTy-tR;
+		span{
+			margin-left: 10px;
+			&:nth-child(1){
+				color: @brand-warning;
+			}
+			&:nth-child(2){
+				color:#828282;
+				margin-left: 20px;
+			}
+		}
+	}
+
+#navigation{
+	.cTy-w100per;
+	height: 70px;
+	.cTy-cFix;
+	background-color: white;
+	.logo{
+		.cTy-dB;
+		.cTy-fL;
+		.cTy-oH;
+		background-image: url(../images/logo.png);
+		background-color: transparent;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 70px;
+		height: 70px;
+	}
+	.main_menu{
+		.cTy-pA;
+		bottom: 0px;
+		right: 0px;
+		.cTy-cFix;
+		ul{
+			li{
+				.cTy-pR;
+				.cTy-fL;
+				.cTy-dB;
+				a{
+					.cTy-dB;
+					.cTy-fs18;
+					padding:.6em 1.5em;
+					color: inherit;
+				}
+				&:after{
+					content:'';
+					.cTy-pA;
+					bottom: 0;
+					left: 0;
+					.cTy-w100per;
+					height: 5px;
+					.cTy-vH;
+					background-color:@brand-primary;
+				}
+				&.actived{
+					&:after{
+						.cTy-vV;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+.container {
+	.breadcrumbs{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	/*product-favarite*/
+	&.pro-fav{
+	position: relative;
+	.cTy-cFix;
+	.cTy-w100per;
+	padding: 10px 0;
+	background-color: white;
+	.content{
+		.title{
+			.cTy-cFix;
+			margin-top: 10px;
+			h4{
+				color:@brand-primary;
+			}
+		}
+		.cTy-grid.slider-container{
+			padding: 0 30px;
+			float: left;
+			button{
+				.cTy-pA;
+				top: 50%;
+				left: 0px;
+				width: 30px;
+				height: 30px;
+				margin-top: -15px;
+				border: none;
+				outline: none;
+				z-index: 10;
+				&:nth-child(2){
+					left:inherit;
+					right:0px;
+				}
+			}
+			ul{
+				li{
+					div{
+						&:nth-child(1){
+							width: 100%;
+							height:100%;
+							.cTy-oH;
+							img{
+								width: 100%;
+							}
+							.pro-info{
+								position: absolute;
+								bottom: 0;
+								left: 0;
+								width: 100%;
+								padding: 5px 10px;
+								background-color: rgba(0,0,0,0.5);
+								color: #fff;
+								//.cTy-fs12;
+								.cTy-cFix;
+								span{
+									.cTy-tU;
+									float: left;
+									display: inline-block;
+								}
+								a{
+									display: inline-block;
+									float: right;
+									text-align: right;
+									color: rgba(255,255,255,0.5);
+									&:hover{
+										color:white;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/*company-information*/
+	&.company-info{
+		.cTy-pR;
+		.cTy-w100per;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: center;
+		.content{
+			.cTy-pR;
+			height: 540px;
+			.board-info{
+				.cTy-pA;
+				bottom: 100px;
+				background-color:rgba(0,0,0,0.5);
+				padding: 20px;
+				color: white;
+			}
+		}
+	}
+
+/*detail-product*/
+&.detail-product{
+	.content{
+		.image{
+			position: relative;
+			width: 100%;
+			height: 360px;
+			overflow: hidden;
+			margin-bottom: 20px;
+			img{
+				position: relative;
+				top: -150px;
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+}
+
+
+.wrapper{
+	.cTy-cFix;
+	padding-bottom: 100px;
+	background-color: white;
+	padding-top: 30px;
+	.container{
+		.cTy-cFix;
+		padding-bottom: 20px;
+		border-bottom: 1px solid @gray-lighter;
+		margin-bottom: 20px;
+		.title{
+			margin-bottom: 10px;
+			h4{
+				.cTy-tU;
+				color:@brand-primary;
+			}
+		}
+		&:last-child{
+			border-bottom: none;
+		}
+	}
+	.side-left{
+		float: left;
+		width: 620px;
+		.container{
+			.content{
+				.video{
+					iframe{
+						width: 100%;
+						height: 375px;
+						outline: none;
+						border: 0;
+					}
+				}
+			}
+		}
+	}
+	.side-right{
+		float: right;
+		width: 340px;
+		.container.other-pro{
+			.content{
+				.list-items{
+					width: 100%;
+					.cTy-dB;
+					li{
+						width: 100%;
+						height: 100px;
+						background-color: #f0f0f0;
+						overflow: hidden;
+						.cTy-dB;
+						margin-bottom: 10px;
+						a{
+							.cTy-dB;
+							.cTy-cFix;
+							width: 100%;
+							height: 100%;
+							.image{
+								.cTy-fL;
+								width: 140px;
+								height: 100%;
+								.cTy-oH;
+								background-color: white;
+								img{
+									width: 100%;
+								}
+							}
+							.content{
+								.cTy-oH;
+								.cTy-fR;
+								width:190px;
+								padding:5px 10px;
+								line-height: 20px;
+								h4{
+									.cTy-tE;
+									.cTy-tU;
+								}
+							}
+						}
+						&:last-child{
+							height: auto;
+							background-color: transparent;
+							text-align: right;
+							margin-bottom: inherit;
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 999;
+}
+
+
+/*product-page*/
+.list-product{
+	.content{
+		margin-bottom: 10px;
+		.cTy-grid{
+			ul{
+				li{
+					div{
+						&:nth-child(1){
+							img{
+								width:100%;
+								margin-bottom: 5px;
+							}
+							.pro-info{
+								position: absolute;
+								bottom:0;
+								width: 100%;
+								padding: 5px 10px;
+								background-color: rgba(0,0,0,0.5);
+								color: white;
+								.cTy-cFix;
+								h4, a{
+									display: inline-block;
+								}
+								a{
+									margin-top: 2px;
+									float: right;
+									color: rgba(255,255,255,0.5);
+									&:hover{
+										color:white;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.bar-social{
+	position: fixed;
+	top: 150px;
+	right: 10px;
+	width: 40px;
+	min-height: 40px;
+	a{
+		display: block;
+		width: 40px;
+		height: 40px;
+		margin-bottom: 10px;
+		background-image: url();
+		background-size: 40px;
+		background-repeat: no-repeat;
+		.cTy-oH;
+		&.facebook-btn{
+			background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/267px-F_icon.svg.png);
+		}
+		&.skype-btn{
+			background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/9e/Skype.svg);
+			#SkypeButton_Call_Thanh_1{
+				opacity: 0;
+			}
+		}
+	}
+}
+#content{
+	.cTy-cFix;
+	margin-top:100px;
+}
+@import "slider";
+@import "footer";
