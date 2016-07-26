@@ -1,26 +1,27 @@
   <?php
   include 'core/init.php';
-    protect_page_admin();
+pro_protect_page();
+include 'includes/overall/pro-header.php';
   ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Thanh SF</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/admin.css" />
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
-    <script src="js/thanhSF.js"></script>
-</head>
-<body>
 
-<div class="cTy-admin">
-    <div class="cTy-side-left"></div>
-    <div class="cTy-side-right"></div>
+<div class="cty-admin">
+    <div class="cty-side-left">
+        <nav>
+            <ul>
+                <li><input type="radio" name="menu"><label for="tab11">tab11</label></li>
+                <li><input type="radio" name="menu"><label for="tab12">tab12</label></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="cty-side-right">
+        <div class="cty-content">
+            <ol>
+                <li><input id="tab11" type="radio" name="content"><div> content 1 </div></li>
+                <li><input id="tab12" type="radio" name="content"><div> content 2 </div></li>
+                
+            </ol>
+        </div>
+    </div>
 </div>
 
 <?php
@@ -32,7 +33,7 @@
 ?>
 
 
-
-</body>
-</html>
+<?php
+include 'includes/overall/pro-footer.php';
+?>
 

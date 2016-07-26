@@ -1,7 +1,7 @@
 <!--nhan require POST-->
 <?php
 include 'core/init.php';
-logged_in_redirect();
+pro_logged_in_redirect();
 
 if (empty($_POST) === false){
 	$username = $_POST['username'];
@@ -36,7 +36,7 @@ if (empty($_POST) === false){
 		$errors[] = 'No data received';
 	}
 
-include 'includes/overall/header.php';
+include 'includes/overall/pro-header.php';
 //sau khi dang nhap se xuat hien noi dung
 //echo output_errors($errors);
 
@@ -46,5 +46,5 @@ if (empty($errors) === false){
 <?php
 	echo output_errors($errors);
 	}
-include 'includes/overall/footer.php';
+include 'includes/overall/pro-footer.php';
 ?>

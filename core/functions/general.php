@@ -1,11 +1,21 @@
 <?php
+//PRODUCT
 //product-adiministrator
-function protect_page_admin(){
+function pro_protect_page(){
     if(logged_in() === false){
         header ('location: pro-administrator.php');
         exit();
     }
 }
+
+function pro_logged_in_redirect(){
+     if(logged_in() === true){
+        header ('location: index.php');
+        exit();
+    }
+}
+
+//END PRODUCT
 
 //function email($to, $subject, $body){
 //   mail($to, $subject, $body, 'From: somattien@gmail.com');

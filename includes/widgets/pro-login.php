@@ -2,7 +2,7 @@
 <div class="widget">
   <h2>Log in/Register</h2>
   <div class="inner">
-  	<form action="pro_login.php" method="post">
+  	<form action="pro-login.php" method="post">
     <ul id="login">
     	<li>
             	<label>username</label>
