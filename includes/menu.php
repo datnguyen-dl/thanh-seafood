@@ -1,6 +1,6 @@
 <div id="navigation">
-    <div class="cTy-sWMain cTy-h100per">
-        <a href="home-page.html" class="logo"></a>
+    <div class="cty-sWMain cty-h100per">
+        <a href="index.php" class="logo"></a>
         <nav class="main_menu">
             <ul>
                 <li class="actived"><a href="index.php" class="actived">Trang Chủ</a></li>

@@ -15,33 +15,33 @@
 
     <!--product-favourite-->
     <div class="container pro-fav">
-        <div class="content cTy-sWMain">
-            <div class="title cTy-row2">
-                <div class="cTy-col cTy-tU">
+        <div class="content cty-sWMain">
+            <div class="title cty-row2">
+                <div class="cty-col cty-tU">
                     <h4>Sản Phẩm Được Ưa Chuộng</h4>
                 </div>
-                <div class="cTy-col cTy-tR"><a href="#">Xem thêm >></a></div>
+                <div class="cty-col cty-tR"><a href="#">Xem thêm >></a></div>
             </div>
-            <div class="cTy-grid slider-container">
+            <div class="cty-grid slider-container">
                 <button><i class="material-icons">chevron_left</i></button>
                 <button><i class="material-icons">chevron_right</i></button>
-                <ul class="cTy-row4">
-                    <li class="cTy-col">
+                <ul class="cty-row4">
+                    <li class="cty-col">
                         <div><img src="images/products/ca-bac-ma.jpg">
                             <div class="pro-info"><span>Cá Bạc Má</span> <a href="product-detail.php">Chi tiết</a></div>
                         </div>
                     </li>
-                    <li class="cTy-col">
+                    <li class="cty-col">
                         <div><img src="images/products/ca-thu.jpg">
                             <div class="pro-info"><span>Cá Thu</span> <a href="product-detail.php">Chi tiết</a></div>
                         </div>
                     </li>
-                    <li class="cTy-col">
+                    <li class="cty-col">
                         <div><img src="images/products/bach-tuoc.jpg">
                             <div class="pro-info"><span>Bạch Tuộc</span> <a href="product-detail.php">Chi tiết</a></div>
                         </div>
                     </li>
-                    <li class="cTy-col">
+                    <li class="cty-col">
                         <div><img src="images/products/muc-ong.jpg">
                             <div class="pro-info"><span>Mực Ống</span> <a href="product-detail.php">Chi tiết</a></div>
                         </div>
@@ -52,21 +52,21 @@
     </div>
     <!--company-info-->
     <div class="container company-info">
-        <div class="content cTy-sWMain">
+        <div class="content cty-sWMain">
             <div class="board-info">
                 <h3>DNTN NGUYỆT ANH</h3>
                 <span>Chuyên cung cấp sỉ & lẻ hải sản tươi sống.</span>
                 <p>GIAO HÀNG TẬN NƠI UY TÍN - CHẤT LƯỢNG.</p>
                 <br>
-                <p class="cTy-cl-warning">Hotline:</p>
-                <p class="cTy-cl-warning"><strong>0902 711 243</strong> (a.Đức) - <strong>0917 112 236</strong> (a.Thành)</p>
+                <p class="cty-cl-warning">Hotline:</p>
+                <p class="cty-cl-warning"><strong>0902 711 243</strong> (a.Đức) - <strong>0917 112 236</strong> (a.Thành)</p>
                 <p>Tổ 9, Ấp Sua Đủa, xã Vĩnh Hòa Hiệp, ChâuThành, Kiên Giang</p>
             </div>
         </div>
     </div>
     <!--main-content-->
     <div class="wrapper">
-        <div class="cTy-sWMain">
+        <div class="cty-sWMain">
             <div class="side-left">
                 <!--video-->
                 <div class="container video">
@@ -85,7 +85,7 @@
                         <h4>Về chúng tôi</h4>
                     </div>
                     <div class="content">
-                        <p><strong class="cTy-tU">DNTN Nguyệt Anh</strong>
+                        <p><strong class="cty-tU">DNTN Nguyệt Anh</strong>
                             <br> Kính Chào Quý Khách
                             <br>
                             <br> Đại lý chúng tôi là một trong những nơi cung cấp hải sản đa dạng chủng loại, đặt biệt là Cá Thu, Cá Mú, Cá Sòng, Mực Nắng, Bạch Tuộc và các loại hải sản khác. Đến nay đại lý chúng tôi là nơi cung cấp hải sản uy tín chất lượng cho những nhà hàng, khách sạn, resort nổi tiếng tại thành phố Hồ Chí Minh và các tỉnh phía Nam.
@@ -96,7 +96,7 @@
                             <br>
                             <br>
                         </p>
-                        <p class="cTy-cl-warning">Hotline:
+                        <p class="cty-cl-warning">Hotline:
                             <br><strong>0902 711 243</strong> (a.Đức) - <strong>0917 112 236</strong> (a.Thành)</p>
                     </div>
                 </div>

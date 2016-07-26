@@ -5,7 +5,7 @@
   ?>
 
 <div class="wrapper" style="min-height:800px;">
-    <div class="cTy-sWMain">
+    <div class="cty-sWMain">
         <!--us-product-->
         <div class="container contact">
             <div class="title">
@@ -18,7 +18,7 @@
                 <p>GIAO HÀNG TẬN NƠI UY TÍN - CHẤT LƯỢNG.</p>
                 <br>
                 <p>Tổ 9, Ấp Sua Đủa, xã Vĩnh Hòa Hiệp, Châu Thành, Kiên Giang</p>
-                <p class="cTy-cl-warning">Hotline:
+                <p class="cty-cl-warning">Hotline:
                     <br><strong>0902 711 243</strong> (a.Đức) - <strong>0917 112 236</strong> (a.Thành)</p>
             </div>
         </div>

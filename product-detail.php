@@ -4,7 +4,7 @@
 ?>
  
 <div class="wrapper" style="min-height:800px;">
-            <div class="cTy-sWMain">
+            <div class="cty-sWMain">
                 <!--us-product-->
                 <div class="container detail-product">
                     <div class="content">

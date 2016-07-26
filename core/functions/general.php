@@ -1,4 +1,11 @@
 <?php
+//product-adiministrator
+function protect_page_admin(){
+    if(logged_in() === false){
+        header ('location: pro-administrator.php');
+        exit();
+    }
+}
 
 //function email($to, $subject, $body){
 //   mail($to, $subject, $body, 'From: somattien@gmail.com');
