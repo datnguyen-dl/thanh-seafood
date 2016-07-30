@@ -1,3 +1,38 @@
+@import "style";
 .cty-admin{
-    
+    .cty-cFix;
+    & > .cty-side-left{
+        .cty-fL;
+        width: 150px;
+        background-color: bisque;
+        & > .cty-content{
+
+        }
+    }
+    & > .cty-side-right{
+        .cty-fL;
+        width: ~"calc(100% - 1px - 150px)";
+        background-color: antiquewhite;
+        & > .cty-content{
+
+        }
+    }
+}
+
+
+//tabs
+.cty-content-tabs{
+    & > li{
+        & > div {
+            .cty-dN;
+        }
+        & > input{
+            .cty-dN;
+            &:checked{
+            & + div{
+                .cty-dB;
+            }
+        }
+        }
+    }
 }

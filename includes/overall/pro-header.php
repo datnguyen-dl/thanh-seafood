@@ -6,5 +6,6 @@
         <?php include 'includes/pro-header.php'; ?>
             <div id="content">
                 <?php 
-                    include 'includes/pro-aside.php'; 
+                    include 'includes/pro-aside.php';
+                include 'includes/product.php';
                 ?>

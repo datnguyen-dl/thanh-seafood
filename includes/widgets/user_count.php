@@ -1,5 +1,4 @@
 <div class="widget">
-  <h2>Users (user_count.php)</h2>
   <div class="inner">
   <?php
   $user_count = user_count();

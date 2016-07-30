@@ -7,4 +7,5 @@
             <div id="content">
                 <?php 
 //                include 'includes/aside.php'; 
+                include 'includes/product.php';
                 ?>

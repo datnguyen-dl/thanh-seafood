@@ -1,30 +1,51 @@
-  <?php
+<?php
   include 'core/init.php';
 pro_protect_page();
 include 'includes/overall/pro-header.php';
+
   ?>
 
-<div class="cty-admin">
-    <div class="cty-side-left">
-        <nav>
-            <ul>
-                <li><input type="radio" name="menu"><label for="tab11">tab11</label></li>
-                <li><input type="radio" name="menu"><label for="tab12">tab12</label></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="cty-side-right">
-        <div class="cty-content">
-            <ol>
-                <li><input id="tab11" type="radio" name="content"><div> content 1 </div></li>
-                <li><input id="tab12" type="radio" name="content"><div> content 2 </div></li>
-                
-            </ol>
+    <div class="cty-admin">
+        <div class="cty-side-left">
+            <div class="cty-content">
+                <nav class="cty-menu-tabs">
+                    <ul>
+                        <li>
+                            <input type="radio" name="menu">
+                            <label onclick="" for="tab11">home</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="menu">
+                            <label for="tab12">product</label>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="cty-side-right">
+            <div class="cty-content">
+                <ol class="cty-content-tabs">
+                    <li>
+                        <input id="tab11" type="radio" name="content" >
+                        <div> home </div>
+                    </li>
+                    <li>
+                        <input id="tab12" type="radio" name="content" checked>
+                        <div class="cty-grid">
+                        <ul class="cty-row4">
+                        <?php
+                            pro_seafood();
+                        ?>
+                        </ul>
+
+                        </div>
+                    </li>
+                </ol>
+            </div>
         </div>
     </div>
-</div>
 
-<?php
+    <?php
     if(has_access($session_user_id, 1) === true){
         echo 'Admin! AAAA';
     }else if(has_access($session_user_id, 2) === true){
@@ -33,7 +54,6 @@ include 'includes/overall/pro-header.php';
 ?>
 
 
-<?php
+        <?php
 include 'includes/overall/pro-footer.php';
 ?>
-
