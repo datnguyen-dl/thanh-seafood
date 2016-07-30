@@ -13,7 +13,7 @@ include 'includes/overall/header.php';
                             <h4>Sản Phẩm Chính</h4></div>
                         <div class="cty-grid">
                             <ul class="cty-row4">
-                                <?php pro_seafood(); ?>
+                                <?php pro_seafood($pro_path_img,$pro_file_img); ?>
                             </ul>
                         </div>
                     </div>
@@ -23,7 +23,7 @@ include 'includes/overall/header.php';
                             <h4>Sản Phẩm Khác</h4></div>
                         <div class="cty-grid">
                             <ul class="cty-row4">
-                                <?php pro_food(); ?>
+                                <?php pro_food($pro_path_img,$pro_file_img); ?>
                             </ul>
                         </div>
                     </div>

@@ -1,5 +1,8 @@
 <?php
 //PRODUCT
+$pro_path_img = 'images/products/';
+$pro_path_img_slider = 'images/products/slider/';
+$pro_file_img = '.jpg';
 //product-adiministrator
 function pro_protect_page(){
     if(logged_in() === false){

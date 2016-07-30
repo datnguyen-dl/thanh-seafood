@@ -2,7 +2,7 @@
   include 'core/init.php';
 pro_protect_page();
 include 'includes/overall/pro-header.php';
-
+include 'includes/product.php';
   ?>
 
     <div class="cty-admin">
@@ -32,12 +32,9 @@ include 'includes/overall/pro-header.php';
                     <li>
                         <input id="tab12" type="radio" name="content" checked>
                         <div class="cty-grid">
-                        <ul class="cty-row4">
-                        <?php
-                            pro_seafood();
-                        ?>
-                        </ul>
-
+                            <ul>
+                                <?php pro_list($pro_path_img,$pro_file_img); ?>
+                            </ul>
                         </div>
                     </li>
                 </ol>

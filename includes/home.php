@@ -4,11 +4,8 @@
             <button><i class="material-icons">chevron_left</i></button>
             <button><i class="material-icons">chevron_right</i></button>
             <ul>
-                <li> <img src="images/sliders/muc_sua.jpg" />
-                    <!--<div class="inf_slider">
-          <h3 class="title">Mực</h3>
-          <span class="content">Mực tươi ngon loại một</span> </div>-->
-                </li>
+               <?php pro_slider($pro_path_img_slider,$pro_file_img); ?>
+
             </ul>
         </div>
     </div>
@@ -26,6 +23,7 @@
                 <button><i class="material-icons">chevron_left</i></button>
                 <button><i class="material-icons">chevron_right</i></button>
                 <ul class="cty-row4">
+                   <?php pro_sub_slider($pro_path_img,$pro_file_img); ?>
                     <li class="cty-col">
                         <div><img src="images/products/ca-bac-ma.jpg">
                             <div class="pro-info"><span>Cá Bạc Má</span> <a href="product-detail.php">Chi tiết</a></div>
@@ -108,42 +106,7 @@
                         <h4>Sản Phẩm Khác</h4></div>
                     <div class="content">
                         <ol class="list-items">
-                            <li>
-                                <a href="product-detail.php">
-                                    <div class="image"><img src="images/products/Tombaccuc1.jpg"></div>
-                                    <div class="content">
-                                        <h4>Tôm Bắc Cực</h4>
-                                        <p>Tôm Bắc Cực được đánh bắt ở vùng biển lạnh và băng tuyết ở Greenland...</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="product-detail.php">
-                                    <div class="image"><img src="images/products/ca-ngu.jpg"></div>
-                                    <div class="content">
-                                        <h4>Lorem ipsum dmet, con</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="product-detail.php">
-                                    <div class="image"><img src="images/products/duoi-ga.jpg"></div>
-                                    <div class="content">
-                                        <h4>Loasum dolor sit amet, con</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="product-detail.php">
-                                    <div class="image"><img src="images/products/ga-nuoi.jpg"></div>
-                                    <div class="content">
-                                        <h4>Bm dolor sit amet, con</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                    </div>
-                                </a>
-                            </li>
+                            <?php pro_new($pro_path_img,$pro_file_img); ?>
 
                             <li>
                                 <a href="#">Xem thêm >></a>
