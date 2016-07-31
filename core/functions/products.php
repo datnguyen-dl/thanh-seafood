@@ -23,6 +23,37 @@ function pro_data(){
 				$data = mysql_fetch_assoc(mysql_query("SELECT $fields FROM products")); // associative array la mang ket hop ('ten' => gia tri)
 				return $data;
 			}
-		}
+}
+
+
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $target_dir = "images/products/";
+    $target_file = $target_dir . basename($_FILES['fileUpload']['name']);
+/*    $typeFile = pathinfo($_FILES['fileUpload']['name'], PATHINFO_EXTENSION);
+    $typeFileAllow = array('png','jpg','jpeg', 'gif');
+    if(!in_array(strtolower($typeFile), $typeFileAllow)){
+        $error = "File bạn vừa chọn hệ thống không hỗ trợ, bạn vui lòng chọn hình ảnh";
+    }
+    $sizeFile = $_FILES['size'];
+    if($sizeFile > 5242880){
+        $error = "File bạn chọn không được quá 5MB";
+    }
+
+    if(file_exists($target_file)){
+        $error = "File bạn chọn đã tồn tại trên hệ thống";
+    }
+
+    if(empty($error)){
+        if(move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $target_file)){
+            echo "Bạn đã upload file thành công";
+        }  else {
+            echo "File bạn vừa upload gặp sự cố";
+        }
+    }*/
+}
+
+
+
 
 ?>
