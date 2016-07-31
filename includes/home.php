@@ -24,26 +24,6 @@
                 <button><i class="material-icons">chevron_right</i></button>
                 <ul class="cty-row4">
                    <?php pro_sub_slider($pro_path_img,$pro_file_img); ?>
-                    <li class="cty-col">
-                        <div><img src="images/products/ca-bac-ma.jpg">
-                            <div class="pro-info"><span>Cá Bạc Má</span> <a href="product-detail.php">Chi tiết</a></div>
-                        </div>
-                    </li>
-                    <li class="cty-col">
-                        <div><img src="images/products/ca-thu.jpg">
-                            <div class="pro-info"><span>Cá Thu</span> <a href="product-detail.php">Chi tiết</a></div>
-                        </div>
-                    </li>
-                    <li class="cty-col">
-                        <div><img src="images/products/bach-tuoc.jpg">
-                            <div class="pro-info"><span>Bạch Tuộc</span> <a href="product-detail.php">Chi tiết</a></div>
-                        </div>
-                    </li>
-                    <li class="cty-col">
-                        <div><img src="images/products/muc-ong.jpg">
-                            <div class="pro-info"><span>Mực Ống</span> <a href="product-detail.php">Chi tiết</a></div>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </div>

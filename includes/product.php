@@ -107,6 +107,8 @@ echo '<div class="title">
 function pro_list($pro_path_img,$pro_file_img){
     $pro_item = mysql_query("SELECT * FROM products");
     if(mysql_num_rows($pro_item) <> 0){
+
+
         while($row = mysql_fetch_assoc($pro_item)){
            echo '
             <li>
@@ -132,7 +134,7 @@ function pro_list($pro_path_img,$pro_file_img){
                             <li><label>loai<br><input type="number" name="pro_type" value="'.$row["pro_type"].'"></label></li>
                             <li><label>ma san pham<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
                             <li>
-                                <input type="submit" name="pro_update" value="update">
+                                <input type="submit" name="pro_update" value="chinh sua">
                             </li>
                         </ul>
                     </form>
@@ -142,8 +144,45 @@ function pro_list($pro_path_img,$pro_file_img){
         }
         pro_update();
     }
+}
 
-    return;
+
+function pro_create($pro_path_img,$pro_file_img){
+    $pro_item = mysql_query("SELECT * FROM products");
+    if(mysql_num_rows($pro_item) <> 0){
+            $row = mysql_fetch_assoc($pro_item);
+
+        pro_insert();
+        echo '
+            <li>
+                <div>
+                <h2>Tao san pham</h2>
+                    <img src="'. $pro_path_img . $row["pro_image1"] .'">
+                </div>
+                <div class="cty-pro-edit">
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        <ul>
+
+                            <li><label>ten<br><input type="text" name="pro_name" ></label></li>
+                             <li><label>ten hinh anh<br><input type="text" name="pro_image" ></label></li>
+                            <li><label>hinh anh<br><input type="file" name="pro_fileUpload" ></label></li>
+                            <li><label>hinh anh lon (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
+                            <li><label>so luong<br><input type="number" name="pro_amount" ></label></li>
+                            <li><label>chi tiet<br><textarea name="pro_detail">nhap text</textarea></label></li>
+                            <li><label>han su dung<br><input type="datetime" name="pro_expired"></label></li>
+                            <li><label>gia<br><input type="number" name="pro_price"></label></li>
+                            <li><label>giam gia<br><input type="number" name="pro_saleoff" ></label></li>
+                            <li><label>loai<br><input type="number" name="pro_type" ></label></li>
+                            <li><label>ma san pham<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
+                            <li>
+                                <input type="submit" name="pro_update" value="tao san pham">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </li>
+            ';
+    }
 }
 
 

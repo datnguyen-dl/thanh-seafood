@@ -34,6 +34,8 @@ include 'includes/product.php';
                         <div class="cty-list-product">
                             <ul>
                                 <?php pro_list($pro_path_img,$pro_file_img); ?>
+
+                                <?php pro_create($pro_path_img,$pro_file_img); ?>
                             </ul>
                         </div>
                     </li>
