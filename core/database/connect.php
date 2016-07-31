@@ -2,7 +2,7 @@
 <?php
 $localhost_admin	=	'localhost';
 $username_admin		=	'root';
-$password_admin		=	'';
+$password_admin		=	'usbw';
 $database_admin		=	'thanh-seafood';
 
 $connect_error = 'Sorry, We\'re experiencing connection proplems.';

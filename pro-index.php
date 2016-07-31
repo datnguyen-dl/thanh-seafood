@@ -31,7 +31,7 @@ include 'includes/product.php';
                     </li>
                     <li>
                         <input id="tab12" type="radio" name="content" checked>
-                        <div class="cty-grid">
+                        <div class="cty-list-product">
                             <ul>
                                 <?php pro_list($pro_path_img,$pro_file_img); ?>
                             </ul>
