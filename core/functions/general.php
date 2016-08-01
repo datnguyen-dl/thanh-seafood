@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 //PRODUCT
 $pro_path_img = 'images/products/';
 $pro_path_img_slider = 'images/products/slider/';
@@ -65,4 +67,29 @@ function output_errors($errors){
     }
     return "<ul>" . implode(' ', $output) . "</ul>";  // chuyen &ouptut tu mang thanh` chuoi (nguoc voi explode)
 }
+
+
+
+
+
+echo idate("B") . "B<br>";
+echo idate("d") . "d<br>";
+echo idate("h") . "h<br>";
+echo idate("H") . "H<br>";
+echo idate("i") . "i<br>";
+echo idate("I") . "I<br>";
+echo idate("L") . "L<br>";
+echo idate("m") . "m<br>";
+echo idate("s") . "s<br>";
+echo idate("t") . "t<br>";
+echo idate("U") . "U<br>";
+echo idate("w") . "w<br>";
+echo idate("W") . "W<br>";
+echo idate("y") . "y<br>";
+echo idate("Y") . "Y<br>";
+echo idate("z") . "z<br>";
+echo idate("Z") . "Z<br>";
+
+echo $date;
+
 ?>

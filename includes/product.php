@@ -107,9 +107,23 @@ echo '<div class="title">
 function pro_list($pro_path_img,$pro_file_img){
     $pro_item = mysql_query("SELECT * FROM products");
     if(mysql_num_rows($pro_item) <> 0){
-
-
         while($row = mysql_fetch_assoc($pro_item)){
+
+               if($row["pro_type"] == 0){
+                $selected_one = "selected";
+                   $selected_two = " ";
+                   $selected_three = " ";
+            }else if($row["pro_type"] == 1){
+                $selected_two = "selected";
+                   $selected_one = " ";
+                   $selected_three = " ";
+            }else{
+                $selected_three = "selected";
+                   $selected_two = " ";
+                   $selected_two = " ";
+            }
+
+
            echo '
             <li>
                 <div>
@@ -128,10 +142,16 @@ function pro_list($pro_path_img,$pro_file_img){
                             <li><label>hinh anh lon (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
                             <li><label>so luong<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
                             <li><label>chi tiet<br><textarea name="pro_detail">'.$row["pro_detail"].'</textarea></label></li>
-                            <li><label>han su dung<br><input type="datetime" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
+                            <li><label>han su dung<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
                             <li><label>gia<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
                             <li><label>giam gia<br><input type="number" name="pro_saleoff" value="'.$row["pro_saleoff"].'"></label></li>
-                            <li><label>loai<br><input type="number" name="pro_type" value="'.$row["pro_type"].'"></label></li>
+                            <li><label>loai<br>
+                            <select name="pro_type">
+                                    <option value="0" '.$selected_one.'>hai san</option>
+                                    <option value="1" '.$selected_two.'>lam san</option>
+                                    <option value="2" '.$selected_three.'>san pham khac</option>
+                                </select>
+                            </label></li>
                             <li><label>ma san pham<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
                             <li>
                                 <input type="submit" name="pro_update" value="chinh sua">
@@ -169,10 +189,16 @@ function pro_create($pro_path_img,$pro_file_img){
                             <li><label>hinh anh lon (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
                             <li><label>so luong<br><input type="number" name="pro_amount" ></label></li>
                             <li><label>chi tiet<br><textarea name="pro_detail">nhap text</textarea></label></li>
-                            <li><label>han su dung<br><input type="datetime" name="pro_expired"></label></li>
+                            <li><label>han su dung<br><input type="date" name="pro_expired"></label></li>
                             <li><label>gia<br><input type="number" name="pro_price"></label></li>
                             <li><label>giam gia<br><input type="number" name="pro_saleoff" ></label></li>
-                            <li><label>loai<br><input type="number" name="pro_type" ></label></li>
+                            <li><label>loai<br>
+                                <select name="pro_type">
+                                    <option value="0" selected>hai san</option>
+                                    <option value="1">lam san</option>
+                                    <option value="2">san pham khac</option>
+                                </select>
+                            </label></li>
                             <li><label>ma san pham<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
                             <li>
                                 <input type="submit" name="pro_update" value="tao san pham">
