@@ -30,11 +30,12 @@ function pro_data(){
 function pro_update(){
     if(empty($_POST) === false && empty($errors) === true){
 
-//            111   pro_image 		= ".$_POST['pro_filepload'].",      pro_image      = '".$_POST['pro_image']."',
+//            111   pro_image 		= ".$_POST['pro_filepload'].",      pro_image      = '".$_POST['pro_image']."',pro_insert_date pro_brand
             $pro_image_basename = basename($_FILES['pro_fileUpload']['name']);
             $pro_image_basename_slider = basename($_FILES['pro_fileUpload_slider']['name']);
             $pro_data = "
 			     pro_name 		= '".$_POST['pro_name']."',
+                 pro_brand 		= '".$_POST['pro_brand']."',
 			     pro_amount 	= '".$_POST['pro_amount']."',
 			     pro_detail 	= '".$_POST['pro_detail']."',
 			     pro_expired	= '".$_POST['pro_expired']."',
@@ -135,7 +136,7 @@ function pro_update(){
         }
 }
 
-
+//****************************************************************************************
 
 
 function pro_insert(){
@@ -145,21 +146,13 @@ function pro_insert(){
             $pro_image_basename = basename($_FILES['pro_fileUpload']['name']);
             $pro_image_basename_slider = basename($_FILES['pro_fileUpload_slider']['name']);
 
-            $pro_data = "
-			     pro_name,
-			     pro_amount,
-			     pro_detail,
-			     pro_expired,
-                 pro_price,
-                 pro_saleoff,
-                 pro_type
-                 ";
+            $pro_data_select = "pro_name,pro_brand,pro_amount,pro_detail,pro_expired,pro_price,pro_saleoff,pro_price_total,pro_type";
+
+
             $pro_image          = "
                 pro_image      = '".$pro_image_basename."'
                 ";
             $pro_code           = $_POST['pro_code'];
-
-            print_r($pro_image_basename_slider);
 
 //            2222
              if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -234,9 +227,9 @@ function pro_insert(){
                  echo 'yeu cau nhap gia';
             }
             else{
-                    mysql_query("INSERT INTO MyGuests (firstname, lastname, email) VALUES ('John', 'Doe', 'john@example.com')" );
+                    //mysql_query("INSERT INTO MyGuests $pro_data_select VALUES ('John', 'Doe', 'john@example.com')" );
                 if(empty($pro_image_basename) === false){
-                     mysql_query("UPDATE products SET $pro_image WHERE pro_code = '$pro_code'");
+                     //mysql_query("UPDATE products SET $pro_image WHERE pro_code = '$pro_code'");
                     echo $pro_image;
                 }else{
                     echo 'khong co hinh upload';

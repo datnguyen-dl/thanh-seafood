@@ -123,6 +123,8 @@ function pro_list($pro_path_img,$pro_file_img){
                    $selected_two = " ";
             }
 
+            $today = date("Y-m-d");
+        echo $today;
 
            echo '
             <li>
@@ -136,15 +138,19 @@ function pro_list($pro_path_img,$pro_file_img){
                 <div class="cty-pro-edit">
                     <form method="POST" action="" enctype="multipart/form-data">
                         <ul>
-                            <li><label>ten<br><input type="text" name="pro_name" value="'.$row["pro_name"].'"></label></li>
+
+                            <li><label>ten san pham<br><input type="text" name="pro_name" value="'.$row["pro_name"].'"></label></li>
+                            <li><label>thuong hieu<br><input type="text" name="pro_brand" value="'.$row["pro_brand"].'"></label></li>
                              <li><label>ten hinh anh<br><input type="text" name="pro_image" value="'.$row["pro_image"].'"></label></li>
                             <li><label>hinh anh<br><input type="file" name="pro_fileUpload" ></label></li>
                             <li><label>hinh anh lon (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
                             <li><label>so luong<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
                             <li><label>chi tiet<br><textarea name="pro_detail">'.$row["pro_detail"].'</textarea></label></li>
+                            <li><label>ngay nhap<br><input type="text" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
                             <li><label>han su dung<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
                             <li><label>gia<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
                             <li><label>giam gia<br><input type="number" name="pro_saleoff" value="'.$row["pro_saleoff"].'"></label></li>
+                            <li><label>gia giam sau khi giam gia<br><input type="number" name="pro_price_total" value="'.$row["pro_price_total"].'" readonly></label></li>
                             <li><label>loai<br>
                             <select name="pro_type">
                                     <option value="0" '.$selected_one.'>hai san</option>
@@ -172,7 +178,23 @@ function pro_create($pro_path_img,$pro_file_img){
     if(mysql_num_rows($pro_item) <> 0){
             $row = mysql_fetch_assoc($pro_item);
 
-        pro_insert();
+        $today = date("Y-m-d");
+        echo $today;
+
+       $price_total_saleoff =$_POST['pro_price'] - ($_POST['pro_price'] * $_POST['pro_saleoff']) / 100  ;
+
+
+
+       $string_pro_code = $_POST['pro_name'];
+        $string_pro_code = $string_pro_code[0] . $string_pro_code[1] . idate("y") . idate("m") . idate("d") . idate("h") . idate("i") . idate("s");
+       $string_pro_code = trim($string_pro_code);
+        $string_pro_code = str_replace(" ", "", $string_pro_code);
+        $string_pro_code = convert_vi_to_en($string_pro_code);
+        $string_pro_code = strtoupper($string_pro_code);
+echo $string_pro_code;                 // a
+
+
+        //pro_insert();
         echo '
             <li>
                 <div>
@@ -183,15 +205,18 @@ function pro_create($pro_path_img,$pro_file_img){
                     <form method="POST" action="" enctype="multipart/form-data">
                         <ul>
 
-                            <li><label>ten<br><input type="text" name="pro_name" ></label></li>
+                            <li><label>ten san pham<br><input type="text" name="pro_name" ></label></li>
+                            <li><label>thuong hieu<br><input type="text" name="pro_brand"></label></li>
                              <li><label>ten hinh anh<br><input type="text" name="pro_image" ></label></li>
                             <li><label>hinh anh<br><input type="file" name="pro_fileUpload" ></label></li>
                             <li><label>hinh anh lon (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
                             <li><label>so luong<br><input type="number" name="pro_amount" ></label></li>
                             <li><label>chi tiet<br><textarea name="pro_detail">nhap text</textarea></label></li>
+                            <li><label>ngay nhap<br><input type="text" name="pro_insert_date" value="'.$today.'"></label></li>
                             <li><label>han su dung<br><input type="date" name="pro_expired"></label></li>
                             <li><label>gia<br><input type="number" name="pro_price"></label></li>
-                            <li><label>giam gia<br><input type="number" name="pro_saleoff" ></label></li>
+                            <li><label>giam gia<br><input type="number" name="pro_saleoff" value="0"></label></li>
+                            <li><label>gia giam sau khi giam gia<br><input type="number" name="pro_price_total" value="'.$price_total_saleoff.'" readonly></label></li>
                             <li><label>loai<br>
                                 <select name="pro_type">
                                     <option value="0" selected>hai san</option>
