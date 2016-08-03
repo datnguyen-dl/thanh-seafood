@@ -90,7 +90,7 @@ function output_errors($errors){
 
 
 
-
+/*
 echo idate("B") . "B<br>";
 echo idate("d") . "d<br>";
 echo idate("h") . "h<br>";
@@ -107,8 +107,7 @@ echo idate("W") . "W<br>";
 echo idate("y") . "y<br>";
 echo idate("Y") . "Y<br>";
 echo idate("z") . "z<br>";
-echo idate("Z") . "Z<br>";
+echo idate("Z") . "Z<br>";*/
 
-echo $date;
 
 ?>

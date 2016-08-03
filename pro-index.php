@@ -35,7 +35,8 @@ include 'includes/product.php';
                             <ul>
                                 <?php pro_list($pro_path_img,$pro_file_img); ?>
 
-                                <?php pro_create($pro_path_img,$pro_file_img); ?>
+                                <?php pro_create($pro_path_img,$pro_file_img,$user_data['first_name']); ?>
+
                             </ul>
                         </div>
                     </li>
