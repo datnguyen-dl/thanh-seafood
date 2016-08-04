@@ -34,6 +34,21 @@ if(mysql_num_rows($pro_item) <> 0){
 }
 }
 
+function pro_other($pro_path_img,$pro_file_img){
+    $pro_item = mysql_query("SELECT * FROM products WHERE pro_type = 2");
+if(mysql_num_rows($pro_item) <> 0){
+    while($row = mysql_fetch_assoc($pro_item)){
+       echo '
+        <li class="cty-col">
+            <div><img src="'. $pro_path_img . $row["pro_image"] .'">
+                <div class="pro-info">
+                    <span>' . $row["pro_name"] . '</span> <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a></div>
+            </div>
+        </li>
+        ';
+    }
+}
+}
 
 function pro_slider($pro_path_img_slider,$pro_file_img){
     $pro_item = mysql_query("SELECT * FROM products");
@@ -137,26 +152,30 @@ function pro_list($pro_path_img,$pro_file_img){
 //            delete
            echo '
             <li>
+
                 <div>
-                    <img src="'. $pro_path_img . $row["pro_image"] .'">
-                    <div class="pro-info">
-                        <span>' . $row["pro_name"] . '</span>
-                        <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a>
-                    </div>
+                <h2>'.$row["pro_name"].'</h2>
+                <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a>
+                <p>'.$row["pro_insert_date"].'</p>
+                <p>'.$row["pro_price_total"].'</p>
+                    <img src="'. $pro_path_img . $row["pro_image"] .'" height="100%">
+
+
+
                 </div>
                 <div class="cty-pro-edit">
-                    <form method="POST" action="" enctype="multipart/form-data">
+                    <form method="POST" action="pro-update.php" enctype="multipart/form-data">
                         <ul>
                             <li><label>ma san pham<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
                             <li><label>ten san pham<br><input type="text" name="pro_name" value="'.$row["pro_name"].'"></label></li>
-                            <li><label>ten hinh anh<br><input type="text" name="pro_image" value="'.$row["pro_image"].'"></label></li>
+                            <li><label>ten hinh anh<br><input type="text" name="pro_image" value="'.$row["pro_image"].'" readonly></label></li>
                             <li><label>hinh anh<br><input type="file" name="pro_fileUpload" ></label></li>
                             <li><label>hinh anh lon (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
                             <li><label>thuong hieu<br><input type="text" name="pro_brand" value="'.$row["pro_brand"].'"></label></li>
                             <li><label>tong so luong<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
                             <li><label>nhap noi dung<br><textarea name="pro_detail">'.$row["pro_detail"].'</textarea></label></li>
                             <li><label>nguoi viet<br><input type="text" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
-                            <li><label>ngay nhap<br><input type="text" name="pro_date" value="'.$row["pro_date"].'" readonly></label></li>
+                            <li><label>ngay nhap<br><input type="date" name="pro_insert_date" value="'.$row["pro_insert_date"].'"></label></li>
                             <li><label>han su dung<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
                             <li><label>danh gia<br><input type="number" name="pro_rate" value="'.$row["pro_rate"].'"></label></li>
                             <li><label>gia<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
@@ -186,7 +205,7 @@ function pro_list($pro_path_img,$pro_file_img){
 
 }
 
-
+//CREATE
 function pro_create($pro_path_img,$pro_file_img,$user_firstname){
     $pro_item = mysql_query("SELECT * FROM products");
     $row = mysql_fetch_assoc($pro_item);

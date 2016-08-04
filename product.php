@@ -20,10 +20,20 @@ include 'includes/overall/header.php';
 
                     <div class="content">
                         <div class="title">
-                            <h4>Sản Phẩm Khác</h4></div>
+                            <h4>Lâm Sản</h4></div>
                         <div class="cty-grid">
                             <ul class="cty-row4">
                                 <?php pro_food($pro_path_img,$pro_file_img); ?>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="title">
+                            <h4>Sản Phẩm Khác</h4></div>
+                        <div class="cty-grid">
+                            <ul class="cty-row4">
+                                <?php pro_other($pro_path_img,$pro_file_img); ?>
                             </ul>
                         </div>
                     </div>
