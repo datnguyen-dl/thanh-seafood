@@ -11,7 +11,8 @@ if(empty($_POST) === false && empty($errors) === true){
             $pro_image_basename             = basename($_FILES['pro_fileUpload']['name']);
             $pro_image_basename_slider      = basename($_FILES['pro_fileUpload_slider']['name']);
 //    LIST POST
-            $pro_code               = $_POST['pro_code'];
+            $pro_id                 = $_POST['pro_id'];
+            //$pro_code               = $_POST['pro_code'];
             $pro_name               = $_POST['pro_name'];
             $pro_image              = $_POST['pro_image'];
             $pro_brand              = $_POST['pro_brand'];
@@ -25,6 +26,15 @@ if(empty($_POST) === false && empty($errors) === true){
             $pro_saleoff            = $_POST['pro_saleoff'];
             $pro_price_total        = $_POST['pro_price_total'];
             $pro_type               = $_POST['pro_type'];
+    //    TAO MA SAN PHAM
+        $pro_code = $pro_name;
+        $pro_code = $pro_code[0] . $pro_code[1] . idate("y") . idate("m") . idate("d") . idate("h") . idate("i") . idate("s") . $row["pro_id"];
+        $pro_code = trim($pro_code);
+        $pro_code = str_replace(" ", "", $pro_code);
+        $pro_code = convert_vi_to_en($pro_code);
+        $pro_code = strtoupper($pro_code);
+//    TINH GIA SAU KHI GIAM
+            $pro_price_total =$pro_price - ($pro_price * $pro_saleoff) / 100  ;
 //    DUPDATE HINH ANH
     if(empty($pro_image_basename) === false){
         $pro_image = $pro_image_basename;
@@ -33,6 +43,7 @@ if(empty($_POST) === false && empty($errors) === true){
     }
 
             $pro_data = "
+                 pro_code 		    = '".$pro_code."',
 			     pro_name 		    = '".$pro_name."',
                  pro_image 		    = '".$pro_image."',
                  pro_brand 		    = '".$pro_brand."',
@@ -50,7 +61,7 @@ if(empty($_POST) === false && empty($errors) === true){
 
 
         $pro_image_insert   = "pro_image = '".$pro_image_basename_insert."'";
-        $pro_code_insert    = $_POST['pro_code'];
+
  //    DOI TEN LOAI
     if($pro_type == 0){
         $selected_zero = "selected";
@@ -67,6 +78,7 @@ if(empty($_POST) === false && empty($errors) === true){
     }
 //    PRINT PRODUCT
 echo '
+<a href="pro-index.php">tro ve trang pro-insert</a>
 <br>
 hinh anh <br>
 <img src="'.$path_image.$pro_image.'"><br>
@@ -74,6 +86,7 @@ hinh anh slider <br>
 <img src="'.$path_image_slider.$pro_image.'"><br>
 <from method="" action="">
     <ul>
+    <li><label>so id<br><input type="text" name="pro_code" value="'.$pro_id.'" readonly></label></li>
     <li><label>ma san pham<br><input type="text" name="pro_code" value="'.$pro_code.'" readonly></label></li>
     <li><label>ten san pham<br><input type="text" name="pro_name" value="'.$pro_name.'"></label></li>
     <li><label>hinh anh<br><input type="text" name="pro_image" value="'.$pro_image.'" readonly></label></li>
@@ -96,6 +109,7 @@ hinh anh slider <br>
     </label></li>
     <li>
         <input type="submit" name="update" value="dong y chinh sua">
+        <a href="pro-index.php">tro ve trang pro-insert</a>
     </li>
 
 </ul>
@@ -106,19 +120,19 @@ hinh anh slider <br>
 pro_add_image();
 //    INSERT MAIN
 if(empty($_POST['pro_name']) === true){
-    echo '*yeu cau nhap ten san pham';
+    $errors[] =  '*yeu cau nhap ten san pham';
 }else if(empty($_POST['pro_brand']) === true){
-    echo '*yeu cau nhap thuong hieu san pham';
+    $errors[] =  '*yeu cau nhap thuong hieu san pham';
 }else if(empty($_POST['pro_amount']) === true){
-    echo '*yeu cau nhap so luong san pham';
+    $errors[] =  '*yeu cau nhap so luong san pham';
 }else if(empty($_POST['pro_detail']) === true){
-    echo '*yeu cau nhap chi tiet san pham';
+    $errors[] =  '*yeu cau nhap chi tiet san pham';
 }else if(empty($_POST['pro_expired']) === true){
-    echo '*yeu cau nhap ngay het hang cua san pham';
+    $errors[] =  '*yeu cau nhap ngay het hang cua san pham';
 }else if(empty($_POST['pro_price']) === true){
-    echo '*yeu cau nhap gia san pham';
+    $errors[] =  '*yeu cau nhap gia san pham';
 }else{
-        mysql_query("UPDATE products SET $pro_data WHERE pro_code = '$pro_code'");
+        mysql_query("UPDATE products SET $pro_data WHERE pro_id = '$pro_id'");
         header('location: pro-index.php?success');
 		exit();
 }

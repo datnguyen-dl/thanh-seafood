@@ -64,6 +64,7 @@ if(empty($_POST) === false && empty($errors) === true){
     }
 //    PRINT PRODUCT
     echo '
+    <a href="pro-index.php">tro ve trang pro-insert</a>
     <br>
 hinh anh <br>
 <img src="'.$path_image.$pro_image.'"><br>
@@ -93,6 +94,7 @@ hinh anh slider <br>
     </label></li>
     <li>
         <input type="submit" name="create" value="dong y tao">
+        <a href="pro-index.php">tro ve trang pro-insert</a>
     </li>
 
 </ul>

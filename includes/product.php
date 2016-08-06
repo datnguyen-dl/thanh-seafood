@@ -124,35 +124,8 @@ function pro_list($pro_path_img,$pro_file_img){
     if(mysql_num_rows($pro_item) <> 0){
         while($row = mysql_fetch_assoc($pro_item)){
 
-               if($row["pro_type"] == 0){
-                $selected_one = "selected";
-                   $selected_two = " ";
-                   $selected_three = " ";
-            }else if($row["pro_type"] == 1){
-                $selected_two = "selected";
-                   $selected_one = " ";
-                   $selected_three = " ";
-            }else{
-                $selected_three = "selected";
-                   $selected_two = " ";
-                   $selected_two = " ";
-            }
-            $today = date("Y-m-d");
-            echo $pro_id = $row["pro_id"];
-//            delete
-         /*   if(isset($_POST['delete'])) {
-                mysql_query("DELETE FROM products WHERE pro_id = '$pro_id'") ;
-                echo "Deleted data successfully\n";
-             }else{
-                    echo 'khong the delete';
-                }*/
-
-
-
-//            delete
            echo '
             <li>
-
                 <div>
                 <h2>'.$row["pro_name"].'</h2>
                 <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a>
@@ -166,6 +139,7 @@ function pro_list($pro_path_img,$pro_file_img){
                 <div class="cty-pro-edit">
                     <form method="POST" action="pro-update.php" enctype="multipart/form-data">
                         <ul>
+                            <li><label>so id<br><input type="text" name="pro_id" value="'.$row["pro_id"].'" readonly></label></li>
                             <li><label>ma san pham<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
                             <li><label>ten san pham<br><input type="text" name="pro_name" value="'.$row["pro_name"].'"></label></li>
                             <li><label>ten hinh anh<br><input type="text" name="pro_image" value="'.$row["pro_image"].'" readonly></label></li>
@@ -175,7 +149,7 @@ function pro_list($pro_path_img,$pro_file_img){
                             <li><label>tong so luong<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
                             <li><label>nhap noi dung<br><textarea name="pro_detail">'.$row["pro_detail"].'</textarea></label></li>
                             <li><label>nguoi viet<br><input type="text" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
-                            <li><label>ngay nhap<br><input type="date" name="pro_insert_date" value="'.$row["pro_insert_date"].'"></label></li>
+                            <li><label>ngay nhap<br><input type="date" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
                             <li><label>han su dung<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
                             <li><label>danh gia<br><input type="number" name="pro_rate" value="'.$row["pro_rate"].'"></label></li>
                             <li><label>gia<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
@@ -195,8 +169,8 @@ function pro_list($pro_path_img,$pro_file_img){
                         </ul>
                     </form>
                     <form method="POST" action="pro-delete.php">
-                    <input type="text" name="pro_id" value="'.$row["pro_id"].'" readonly>
-                    <input type="submit" name="pro-delete" value="delete">
+                        <input type="text" name="pro_id" value="'.$row["pro_id"].'" readonly>
+                        <input type="submit" name="pro-delete" value="delete">
                     </form>
 
                 </div>
