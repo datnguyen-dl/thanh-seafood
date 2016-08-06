@@ -188,11 +188,10 @@ function pro_list($pro_path_img,$pro_file_img){
                                     <option value="2" '.$selected_three.'>san pham khac</option>
                                 </select>
                             </label></li>
-
                             <li>
                                 <input type="submit" name="update" value="chinh sua">
                                 <input type="reset" name="reset" value="reset">
-                                <input type="submit" name="delete" id = "delete" value="delete" onclick="pro_delete()">
+                                <input type="submit" name="pro-delete" id = "delete" value="delete">
                             </li>
                         </ul>
                     </form>
