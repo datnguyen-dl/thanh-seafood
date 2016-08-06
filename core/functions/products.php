@@ -30,10 +30,8 @@ function pro_add_image(){
     if(empty($_POST) === false && empty($errors) === true){
         //    DUONG DAN HINH ANH
             $path_image                     = "images/products/";
-            $path_image_slider              = "images/products/slider/";
         //    TEN HINH ANH CHON TU LOCAL
             $pro_image_basename             = basename($_FILES['pro_fileUpload']['name']);
-            $pro_image_basename_slider      = basename($_FILES['pro_fileUpload_slider']['name']);
 
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                   if(isset($pro_image_basename)){
@@ -62,6 +60,20 @@ function pro_add_image(){
                  }else{
                      echo 'hinh anh khong ton tai';
                  }
+            }
+        } else if (empty($errors) === false){
+            echo 'ko chay';
+        }
+}
+
+function pro_add_image_slider(){
+    if(empty($_POST) === false && empty($errors) === true){
+        //    DUONG DAN HINH ANH
+            $path_image_slider              = "images/products/slider/";
+        //    TEN HINH ANH CHON TU LOCAL
+            $pro_image_basename_slider      = basename($_FILES['pro_fileUpload_slider']['name']);
+
+            if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 if(isset($pro_image_basename_slider)){
                         $target_file    = $path_image_slider . basename($_FILES['pro_fileUpload_slider']['name']);
                         $typeFile       = pathinfo($_FILES['pro_fileUpload_slider']['name'], PATHINFO_EXTENSION);

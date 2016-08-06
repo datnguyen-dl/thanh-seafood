@@ -102,6 +102,7 @@ hinh anh slider <br>
     ';
 //    ADD FUNCTION
     pro_add_image();
+    pro_add_image_slider();
 //    INSERT MAIN
 if(empty($_POST['pro_name']) === true){
     echo '*yeu cau nhap ten san pham';
