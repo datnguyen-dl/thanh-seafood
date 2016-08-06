@@ -191,9 +191,12 @@ function pro_list($pro_path_img,$pro_file_img){
                             <li>
                                 <input type="submit" name="update" value="chinh sua">
                                 <input type="reset" name="reset" value="reset">
-                                <input type="submit" name="pro-delete" id = "delete" value="delete">
                             </li>
                         </ul>
+                    </form>
+                    <form method="POST" action="pro-delete.php">
+                    <input type="text" name="pro_id" value="'.$row["pro_id"].'" readonly>
+                    <input type="submit" name="pro-delete" value="delete">
                     </form>
 
                 </div>
