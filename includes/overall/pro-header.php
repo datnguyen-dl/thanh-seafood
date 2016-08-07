@@ -4,7 +4,7 @@
 
     <body>
         <?php include 'includes/pro-header.php'; ?>
-            <div id="content">
+            <div>
                 <?php 
                     include 'includes/pro-aside.php';
 

@@ -1,48 +1,94 @@
 @import "style";
-.cty-admin{
+.cty-admin {
     .cty-cFix;
-    & > .cty-side-left{
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    button {
+        .cty-dIB;
+        padding: 5px 10px;
+        background-color: #25649f;
+        color: white;
+        .cty-boxShadown;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    & > .cty-side-left {
         .cty-fL;
         width: 150px;
-        background-color: bisque;
-        & > .cty-content{
-
-        }
+        & > .cty-content {}
     }
-    & > .cty-side-right{
+    & > .cty-side-right {
         .cty-fL;
-        width: ~"calc(100% - 1px - 150px)";
-        background-color: antiquewhite;
-        & > .cty-content{
-            .cty-list-product{
-                & > ul{
+        border-left: 1px solid rgba(0, 0, 0, 0.2);
+        width: ~"calc(100% - 1px - 648px)";
+        min-width: 500px;
+        & > .cty-content {
+            .cty-list-product {
+                & > ul {
                     .cty-dB;
-                    & > li{
-                        .cty-dB;
-                        .cty-pR;
-                        .cty-cFix;
-                        margin-bottom: 30px;
-
+                    & > li {
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
                         & > div {
-                            min-height: 200px;
-                            &:nth-child(1){
-                                .cty-pA;
-                                top: 0px;
-                                left: 0xpx;
-                                width: 200px;
-                                height: 200px;
-                                overflow: hidden;
-                                z-index: 5;
+                            &:nth-child(1) {
+                                & > ul {
+                                    .cty-dB;
+                                    .cty-cFix;
+                                    & > li {
+                                        .cty-dIB;
+                                        .cty-fL;
+                                        padding: 10px;
+                                        &:nth-child(1) {
+                                            width: 65px;
+                                            height: 65px;
+                                            overflow: hidden;
+                                            img {
+                                                height: 100%;
+                                            }
+                                        }
+                                        &:nth-child(2) {}
+                                    }
+                                }
                             }
-                            &:nth-child(2){
-                                &.cty-pro-edit{
-                                .cty-pR;
-                                padding-left: 210px;
-                                    ul{
-                                        li{
-                                            .cty-dB;
+                            &.cty-pro-edit {
+                                border: 1px solid rgba(0, 0, 0, 0.2);
+                                .cty-dN;
+                                background-color: white;
+                                padding: 10px;
+                                position: fixed;
+                                width: 500px;
+                                height: 100vh;
+                                overflow-y: auto;
+                                z-index: 50;
+                                top: 0px;
+                                right: 0px;
+                                .cty-info {
+                                    h4 {
+                                        .cty-dIB;
+                                    }
+                                    img {
+                                        .cty-dIB;
+                                        height: 50px;
+                                    }
+                                }
+                                input,
+                                textarea,
+                                select {
+                                    width: 100%;
+                                    padding: 5px 10px;
+                                }
+                                & > form {
+                                    & > ul {
+                                        & > li {
+                                            margin-bottom: 10px;
                                         }
                                     }
+                                }
+                            }
+                        }
+                        &.actived {
+                            & > div {
+                                &.cty-pro-edit {
+                                    .cty-dB;
                                 }
                             }
                         }
@@ -53,20 +99,19 @@
     }
 }
 
-
 //tabs
-.cty-content-tabs{
-    & > li{
+.cty-content-tabs {
+    & > li {
         & > div {
             .cty-dN;
         }
-        & > input{
+        & > input {
             .cty-dN;
-            &:checked{
-            & + div{
-                .cty-dB;
+            &:checked {
+                & + div {
+                    .cty-dB;
+                }
             }
-        }
         }
     }
 }
