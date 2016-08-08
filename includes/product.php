@@ -151,35 +151,35 @@ function pro_list_seafood($pro_path_img,$pro_file_img){
                     <form method="POST" action="pro-update.php" enctype="multipart/form-data">
                         <ul>
                             <li><input type="hidden" name="pro_id" value="'.$row["pro_id"].'" readonly></li>
-                            <li><label>ma san pham<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
-                            <li><label>ten san pham<br><input type="text" name="pro_name" value="'.$row["pro_name"].'"></label></li>
-                            <li><label>ten hinh anh<br><input type="text" name="pro_image" value="'.$row["pro_image"].'" readonly></label></li>
-                            <li><label>hinh anh<br><input type="file" name="pro_fileUpload" ></label></li>
-                            <li><label>hinh anh lon (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
-                            <li><label>thuong hieu<br><input type="text" name="pro_brand" value="'.$row["pro_brand"].'"></label></li>
-                            <li><label>tong so luong<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
-                            <li><label>nhap noi dung<br><textarea name="pro_detail" cols="60" rows="7">'.$row["pro_detail"].'</textarea></label></li>
-                            <li><label>nguoi viet<br><input type="text" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
-                            <li><label>ngay nhap<br><input type="date" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
-                            <li><label>han su dung<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
-                            <li><label>danh gia<br><input type="number" name="pro_rate" value="'.$row["pro_rate"].'"></label></li>
-                            <li><label>gia<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
-                            <li><label>giam gia<br><input type="number" name="pro_saleoff" value="'.$row["pro_saleoff"].'"></label></li>
-                            <li><label>gia giam sau khi giam gia<br><input type="number" name="pro_price_total" value="'.$row["pro_price_total"].'" readonly></label></li>
-                            <li><label>loai<br>
+                            <li><label>Mã sản phẩm<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
+                            <li><label>Tên sản phẩm<br><input type="text" name="pro_name" value="'.$row["pro_name"].'"></label></li>
+                            <li><label>Tên hình ảnh<br><input type="text" name="pro_image" value="'.$row["pro_image"].'" readonly></label></li>
+                            <li><label>Upload hình ảnh<br><input type="file" name="pro_fileUpload" ></label></li>
+                            <li><label>Upload hình ảnh lớn (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
+                            <li><label>Thương Hiệu<br><input type="text" name="pro_brand" value="'.$row["pro_brand"].'"></label></li>
+                            <li><label>Tổng số lượng (kg), (cái), ...<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
+                            <li><label>Nhập nội dung<br><textarea name="pro_detail" cols="60" rows="7">'.$row["pro_detail"].'</textarea></label></li>
+                            <li><label>Người viết<br><input type="text" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
+                            <li><label>Ngày nhập<br><input type="hidden" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
+                            <li><label>Hạn sử dụng<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
+                            <li><label>Đánh giá<br><input type="number" name="pro_rate" value="'.$row["pro_rate"].'"></label></li>
+                            <li><label>Giá sản phẩm (vnd)<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
+                            <li><label>Giảm giá (%)<br><input type="number" name="pro_saleoff" value="'.$row["pro_saleoff"].'"></label></li>
+                            <li><label>Giá sau khi giảm giá<br><input type="number" name="pro_price_total" value="'.$row["pro_price_total"].'" readonly></label></li>
+                            <li><label>Loại<br>
                             <select name="pro_type">
-                                    <option value="0" '.$selected_one.'>hai san</option>
-                                    <option value="1" '.$selected_two.'>lam san</option>
-                                    <option value="2" '.$selected_three.'>san pham khac</option>
+                                    <option value="0" '.$selected_one.'>Hải Sản</option>
+                                    <option value="1" '.$selected_two.'>Gia Cầm</option>
+                                    <option value="2" '.$selected_three.'>Sản Phẩm Khác</option>
                                 </select>
                             </label></li>
-                            <li><input type="submit" name="update" value="sua"></li>
-                            <li><input type="reset" name="reset" value="reset"></li>
+                            <li><input type="submit" name="update" value="SỬA"></li>
+                            <li><input type="reset" name="reset" value="PHỤC HỒI"></li>
                         </ul>
                     </form>
                     <form method="POST" action="pro-delete.php">
                         <input type="hidden" name="pro_id" value="'.$row["pro_id"].'" readonly>
-                        <input type="submit" name="pro-delete" value="delete">
+                        <input type="submit" name="pro-delete" value="XÓA">
                     </form>
 
                 </div>
@@ -187,7 +187,6 @@ function pro_list_seafood($pro_path_img,$pro_file_img){
             ';
         }
     }
-
 }
 //FOOD
 function pro_list_food($pro_path_img,$pro_file_img){
@@ -220,35 +219,35 @@ function pro_list_food($pro_path_img,$pro_file_img){
                     <form method="POST" action="pro-update.php" enctype="multipart/form-data">
                         <ul>
                             <li><input type="hidden" name="pro_id" value="'.$row["pro_id"].'" readonly></li>
-                            <li><label>ma san pham<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
-                            <li><label>ten san pham<br><input type="text" name="pro_name" value="'.$row["pro_name"].'"></label></li>
-                            <li><label>ten hinh anh<br><input type="text" name="pro_image" value="'.$row["pro_image"].'" readonly></label></li>
-                            <li><label>hinh anh<br><input type="file" name="pro_fileUpload" ></label></li>
-                            <li><label>hinh anh lon (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
-                            <li><label>thuong hieu<br><input type="text" name="pro_brand" value="'.$row["pro_brand"].'"></label></li>
-                            <li><label>tong so luong<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
-                            <li><label>nhap noi dung<br><textarea name="pro_detail" cols="60" rows="7">'.$row["pro_detail"].'</textarea></label></li>
-                            <li><label>nguoi viet<br><input type="text" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
-                            <li><label>ngay nhap<br><input type="date" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
-                            <li><label>han su dung<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
-                            <li><label>danh gia<br><input type="number" name="pro_rate" value="'.$row["pro_rate"].'"></label></li>
-                            <li><label>gia<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
-                            <li><label>giam gia<br><input type="number" name="pro_saleoff" value="'.$row["pro_saleoff"].'"></label></li>
-                            <li><label>gia giam sau khi giam gia<br><input type="number" name="pro_price_total" value="'.$row["pro_price_total"].'" readonly></label></li>
-                            <li><label>loai<br>
+                            <li><label>Mã sản phẩm<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
+                            <li><label>Tên sản phẩm<br><input type="text" name="pro_name" value="'.$row["pro_name"].'"></label></li>
+                            <li><label>Tên hình ảnh<br><input type="text" name="pro_image" value="'.$row["pro_image"].'" readonly></label></li>
+                            <li><label>Upload hình ảnh<br><input type="file" name="pro_fileUpload" ></label></li>
+                            <li><label>Upload hình ảnh lớn (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
+                            <li><label>Thương Hiệu<br><input type="text" name="pro_brand" value="'.$row["pro_brand"].'"></label></li>
+                            <li><label>Tổng số lượng (kg), (cái), ...<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
+                            <li><label>Nhập nội dung<br><textarea name="pro_detail" cols="60" rows="7">'.$row["pro_detail"].'</textarea></label></li>
+                            <li><label>Người viết<br><input type="text" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
+                            <li><label>Ngày nhập<br><input type="hidden" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
+                            <li><label>Hạn sử dụng<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
+                            <li><label>Đánh giá<br><input type="number" name="pro_rate" value="'.$row["pro_rate"].'"></label></li>
+                            <li><label>Giá sản phẩm (vnd)<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
+                            <li><label>Giảm giá (%)<br><input type="number" name="pro_saleoff" value="'.$row["pro_saleoff"].'"></label></li>
+                            <li><label>Giá sau khi giảm giá<br><input type="number" name="pro_price_total" value="'.$row["pro_price_total"].'" readonly></label></li>
+                            <li><label>Loại<br>
                             <select name="pro_type">
-                                    <option value="0" '.$selected_one.'>hai san</option>
-                                    <option value="1" '.$selected_two.'>lam san</option>
-                                    <option value="2" '.$selected_three.'>san pham khac</option>
+                                    <option value="0" '.$selected_one.'>Hải Sản</option>
+                                    <option value="1" '.$selected_two.'>Gia Cầm</option>
+                                    <option value="2" '.$selected_three.'>Sản Phẩm Khác</option>
                                 </select>
                             </label></li>
-                            <li><input type="submit" name="update" value="sua"></li>
-                            <li><input type="reset" name="reset" value="reset"></li>
+                            <li><input type="submit" name="update" value="SỬA"></li>
+                            <li><input type="reset" name="reset" value="PHỤC HỒI"></li>
                         </ul>
                     </form>
                     <form method="POST" action="pro-delete.php">
                         <input type="hidden" name="pro_id" value="'.$row["pro_id"].'" readonly>
-                        <input type="submit" name="pro-delete" value="delete">
+                        <input type="submit" name="pro-delete" value="XÓA">
                     </form>
 
                 </div>
@@ -256,7 +255,6 @@ function pro_list_food($pro_path_img,$pro_file_img){
             ';
         }
     }
-
 }
 //OTHER
 function pro_list_other($pro_path_img,$pro_file_img){
@@ -289,35 +287,35 @@ function pro_list_other($pro_path_img,$pro_file_img){
                     <form method="POST" action="pro-update.php" enctype="multipart/form-data">
                         <ul>
                             <li><input type="hidden" name="pro_id" value="'.$row["pro_id"].'" readonly></li>
-                            <li><label>ma san pham<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
-                            <li><label>ten san pham<br><input type="text" name="pro_name" value="'.$row["pro_name"].'"></label></li>
-                            <li><label>ten hinh anh<br><input type="text" name="pro_image" value="'.$row["pro_image"].'" readonly></label></li>
-                            <li><label>hinh anh<br><input type="file" name="pro_fileUpload" ></label></li>
-                            <li><label>hinh anh lon (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
-                            <li><label>thuong hieu<br><input type="text" name="pro_brand" value="'.$row["pro_brand"].'"></label></li>
-                            <li><label>tong so luong<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
-                            <li><label>nhap noi dung<br><textarea name="pro_detail" cols="60" rows="7">'.$row["pro_detail"].'</textarea></label></li>
-                            <li><label>nguoi viet<br><input type="text" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
-                            <li><label>ngay nhap<br><input type="date" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
-                            <li><label>han su dung<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
-                            <li><label>danh gia<br><input type="number" name="pro_rate" value="'.$row["pro_rate"].'"></label></li>
-                            <li><label>gia<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
-                            <li><label>giam gia<br><input type="number" name="pro_saleoff" value="'.$row["pro_saleoff"].'"></label></li>
-                            <li><label>gia giam sau khi giam gia<br><input type="number" name="pro_price_total" value="'.$row["pro_price_total"].'" readonly></label></li>
-                            <li><label>loai<br>
+                            <li><label>Mã sản phẩm<br><input type="text" name="pro_code" value="'.$row["pro_code"].'" readonly></label></li>
+                            <li><label>Tên sản phẩm<br><input type="text" name="pro_name" value="'.$row["pro_name"].'"></label></li>
+                            <li><label>Tên hình ảnh<br><input type="text" name="pro_image" value="'.$row["pro_image"].'" readonly></label></li>
+                            <li><label>Upload hình ảnh<br><input type="file" name="pro_fileUpload" ></label></li>
+                            <li><label>Upload hình ảnh lớn (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
+                            <li><label>Thương Hiệu<br><input type="text" name="pro_brand" value="'.$row["pro_brand"].'"></label></li>
+                            <li><label>Tổng số lượng (kg), (cái), ...<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
+                            <li><label>Nhập nội dung<br><textarea name="pro_detail" cols="60" rows="7">'.$row["pro_detail"].'</textarea></label></li>
+                            <li><label>Người viết<br><input type="text" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
+                            <li><label>Ngày nhập<br><input type="hidden" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
+                            <li><label>Hạn sử dụng<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
+                            <li><label>Đánh giá<br><input type="number" name="pro_rate" value="'.$row["pro_rate"].'"></label></li>
+                            <li><label>Giá sản phẩm (vnd)<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
+                            <li><label>Giảm giá (%)<br><input type="number" name="pro_saleoff" value="'.$row["pro_saleoff"].'"></label></li>
+                            <li><label>Giá sau khi giảm giá<br><input type="number" name="pro_price_total" value="'.$row["pro_price_total"].'" readonly></label></li>
+                            <li><label>Loại<br>
                             <select name="pro_type">
-                                    <option value="0" '.$selected_one.'>hai san</option>
-                                    <option value="1" '.$selected_two.'>lam san</option>
-                                    <option value="2" '.$selected_three.'>san pham khac</option>
+                                    <option value="0" '.$selected_one.'>Hải Sản</option>
+                                    <option value="1" '.$selected_two.'>Gia Cầm</option>
+                                    <option value="2" '.$selected_three.'>Sản Phẩm Khác</option>
                                 </select>
                             </label></li>
-                            <li><input type="submit" name="update" value="sua"></li>
-                            <li><input type="reset" name="reset" value="reset"></li>
+                            <li><input type="submit" name="update" value="SỬA"></li>
+                            <li><input type="reset" name="reset" value="PHỤC HỒI"></li>
                         </ul>
                     </form>
                     <form method="POST" action="pro-delete.php">
                         <input type="hidden" name="pro_id" value="'.$row["pro_id"].'" readonly>
-                        <input type="submit" name="pro-delete" value="delete">
+                        <input type="submit" name="pro-delete" value="XÓA">
                     </form>
 
                 </div>
@@ -325,9 +323,7 @@ function pro_list_other($pro_path_img,$pro_file_img){
             ';
         }
     }
-
 }
-
 //CREATE
 function pro_create($pro_path_img,$pro_file_img,$user_firstname){
     $pro_item = mysql_query("SELECT * FROM products");
@@ -337,36 +333,36 @@ function pro_create($pro_path_img,$pro_file_img,$user_firstname){
             <li class="actived">
                 <div>
                 <div>
-                    <div><div class="cty-p10"><button class="cty-expand-btn cty-p10">Tao san pham</button></div></div>
+                    <div><div class="cty-p10"><button class="cty-expand-btn cty-p10">TẠO SẢN PHẨM</button></div></div>
                 </div>
 
                 </div>
                 <div class="cty-pro-edit">
                  <div class="cty-info">
-                        <h2>Tao san pham</h2>
+                        <h2>TẠO SẢN PHẨM</h2>
                      </div>
                     <form  method="POST" action="pro-insert.php" enctype="multipart/form-data">
                         <ul>
-                            <li><label>ten san pham<br><input type="text" name="pro_name" ></label></li>
-                            <li><label>hinh anh<br><input type="file" name="pro_fileUpload" ></label></li>
-                            <li><label>hinh anh lon (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
-                            <li><label>thuong hieu<br><input type="text" name="pro_brand"></label></li>
-                            <li><label>tong so luong<br><input type="number" name="pro_amount" ></label></li>
-                            <li><label>nhap noi dung<br><textarea id="noise" class="widgEditor nothing" name="pro_detail" cols="60" rows="7">nhap text</textarea></label></li>
-                            <li><label>nguoi viet<br><input type="text" name="pro_writer" value="'.$user_firstname.'" readonly></label></li>
-                            <li><label>han su dung<br><input type="date" name="pro_expired"></label></li>
-                            <li><label>danh gia<br><input type="number" name="pro_rate" value="0"></label></li>
-                            <li><label>gia<br><input type="number" name="pro_price"></label></li>
-                            <li><label>giam gia<br><input type="number" name="pro_saleoff" value="0"></label></li>
-                            <li><label>loai<br>
+                            <li><label>Tên sản phẩm<br><input type="text" name="pro_name" ></label></li>
+                            <li><label>Upload hình ảnh<br><input type="file" name="pro_fileUpload" ></label></li>
+                            <li><label>Upload hình ảnh lớn (slider)<br><input type="file" name="pro_fileUpload_slider"></label></li>
+                            <li><label>Thương Hiệu<br><input type="text" name="pro_brand"></label></li>
+                            <li><label>Tổng số lượng (kg), (cái), ...<br><input type="number" name="pro_amount" ></label></li>
+                            <li><label>Nhập nội dung<br><textarea id="noise" class="widgEditor nothing" name="pro_detail" cols="60" rows="7">nhap text</textarea></label></li>
+                            <li><label>Người viết<br><input type="text" name="pro_writer" value="'.$user_firstname.'" readonly></label></li>
+                            <li><label>Hạn sử dụng<br><input type="date" name="pro_expired"></label></li>
+                            <li><label>Đánh giá<br><input type="number" name="pro_rate" value="0"></label></li>
+                            <li><label>Giá sản phẩm (vnd)<br><input type="number" name="pro_price"></label></li>
+                            <li><label>Giảm giá (%)<br><input type="number" name="pro_saleoff" value="0"></label></li>
+                            <li><label>Loại<br>
                                 <select name="pro_type">
-                                    <option value="0" selected>hai san</option>
-                                    <option value="1">lam san</option>
-                                    <option value="2">san pham khac</option>
+                                    <option value="0" selected>Hải Sản</option>
+                                    <option value="1">Gia Cầm</option>
+                                    <option value="2">Sảm Phẩm Khác</option>
                                 </select>
                             </label></li>
-                            <li><input type="submit" name="create" value="tao san pham"></li>
-                            <li><input type="reset" name="reset" value="reset"></li>
+                            <li><input type="submit" name="create" value="TẠO SẢN PHẨM"></li>
+                            <li><input type="reset" name="reset" value="PHỤC HỒI"></li>
                         </ul>
                     </form>
                 </div>

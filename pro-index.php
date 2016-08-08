@@ -12,11 +12,11 @@ include 'includes/product.php';
                     <ul>
                         <li>
                             <input type="radio" name="menu">
-                            <label onclick="" for="tab11">home</label>
+                            <label onclick="" for="tab11">Trang chủ</label>
                         </li>
                         <li>
                             <input type="radio" name="menu">
-                            <label for="tab12">product</label>
+                            <label for="tab12">Sản Phẩm</label>
                         </li>
                     </ul>
                 </nav>
@@ -27,7 +27,7 @@ include 'includes/product.php';
                 <ol class="cty-content-tabs">
                     <li>
                         <input id="tab11" type="radio" name="content" >
-                        <div> home </div>
+                        <div> Trang Chủ </div>
                     </li>
                     <li>
                         <input id="tab12" type="radio" name="content" checked>
@@ -35,15 +35,15 @@ include 'includes/product.php';
                             <ul style="background-color:rgba(0,0,0,0.1);">
                                 <?php pro_create($pro_path_img,$pro_file_img,$user_data['first_name']); ?>
                             </ul>
-                            <div class="cty-p10 cty-tC" style="border-top:5px solid rgba(0,0,0,0.2); border-bottom:1px solid rgba(0,0,0,0.2)"><h4>Hai San</h4></div>
+                            <div class="cty-p10 cty-tC" style="border-top:5px solid rgba(0,0,0,0.2); border-bottom:1px solid rgba(0,0,0,0.2)"><h4>Hải Sản</h4></div>
                             <ul>
                                 <?php pro_list_seafood($pro_path_img,$pro_file_img); ?>
                             </ul>
-                            <div class="cty-p10 cty-tC" style="border-top:5px solid rgba(0,0,0,0.2); border-bottom:1px solid rgba(0,0,0,0.2)"><h4>Lam San</h4></div>
+                            <div class="cty-p10 cty-tC" style="border-top:5px solid rgba(0,0,0,0.2); border-bottom:1px solid rgba(0,0,0,0.2)"><h4>Gia Cầm</h4></div>
                             <ul>
                                 <?php pro_list_food($pro_path_img,$pro_file_img); ?>
                             </ul>
-                            <div class="cty-p10 cty-tC" style="border-top:5px solid rgba(0,0,0,0.2); border-bottom:1px solid rgba(0,0,0,0.2)"><h4>San pham khac</h4></div>
+                            <div class="cty-p10 cty-tC" style="border-top:5px solid rgba(0,0,0,0.2); border-bottom:1px solid rgba(0,0,0,0.2)"><h4>Sản Phẩm Khác</h4></div>
                             <ul>
                                 <?php pro_list_other($pro_path_img,$pro_file_img); ?>
                             </ul>

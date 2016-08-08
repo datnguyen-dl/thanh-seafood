@@ -26,12 +26,11 @@ if(empty($_POST) === false && empty($errors) === true){
             $pro_saleoff            = $_POST['pro_saleoff'];
             $pro_price_total        = $_POST['pro_price_total'];
             $pro_type               = $_POST['pro_type'];
-    //    TAO MA SAN PHAM
-        $pro_code = $pro_name;
+//    TAO MA SAN PHAM
+        $pro_code = convert_vi_to_en($pro_name);
         $pro_code = $pro_code[0] . $pro_code[1] . idate("y") . idate("m") . idate("d") . idate("h") . idate("i") . idate("s") . $row["pro_id"];
         $pro_code = trim($pro_code);
         $pro_code = str_replace(" ", "", $pro_code);
-        $pro_code = convert_vi_to_en($pro_code);
         $pro_code = strtoupper($pro_code);
 //    TINH GIA SAU KHI GIAM
             $pro_price_total =$pro_price - ($pro_price * $pro_saleoff) / 100  ;

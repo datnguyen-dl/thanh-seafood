@@ -32,7 +32,6 @@ function pro_add_image(){
             $path_image                     = "images/products/";
         //    TEN HINH ANH CHON TU LOCAL
             $pro_image_basename             = basename($_FILES['pro_fileUpload']['name']);
-
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                   if(isset($pro_image_basename)){
                         $target_file    = $path_image . basename($_FILES['pro_fileUpload']['name']);
@@ -72,7 +71,6 @@ function pro_add_image_slider(){
             $path_image_slider              = "images/products/slider/";
         //    TEN HINH ANH CHON TU LOCAL
             $pro_image_basename_slider      = basename($_FILES['pro_fileUpload_slider']['name']);
-
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 if(isset($pro_image_basename_slider)){
                         $target_file    = $path_image_slider . basename($_FILES['pro_fileUpload_slider']['name']);

@@ -15,9 +15,9 @@
         <div class="content cty-sWMain">
             <div class="title cty-row2">
                 <div class="cty-col cty-tU">
-                    <h4>Sản Phẩm Được Ưa Chuộng</h4>
+                    <h4>SẢN PHẨM ĐƯỢC ƯA CHUỘNG</h4>
                 </div>
-                <div class="cty-col cty-tR"><a href="#">Xem thêm >></a></div>
+                <div class="cty-col cty-tR"><a href="product.php">Xem thêm >></a></div>
             </div>
             <div class="cty-grid slider-container">
                 <button><i class="material-icons">chevron_left</i></button>
@@ -89,7 +89,7 @@
                             <?php pro_new($pro_path_img,$pro_file_img); ?>
 
                             <li>
-                                <a href="#">Xem thêm >></a>
+                                <a href="product.php">Xem thêm >></a>
                             </li>
                         </ol>
                     </div>
