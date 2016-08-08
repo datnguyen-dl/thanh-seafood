@@ -23,9 +23,4 @@
 
 <?php include 'includes/overall/footer.php'; ?>
 
-<script>
-    $(document).ready(function () {
-//        $(.pro-fav .content .slider-container)
-    });
-</script>
 

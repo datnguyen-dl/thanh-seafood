@@ -51,9 +51,10 @@ if(mysql_num_rows($pro_item) <> 0){
 }
 
 function pro_slider($pro_path_img_slider,$pro_file_img){
-    $pro_item = mysql_query("SELECT * FROM products");
+    $pro_item = mysql_query("SELECT * FROM products ORDER BY pro_id");
 if(mysql_num_rows($pro_item) <> 0){
-    while($row = mysql_fetch_assoc($pro_item)){
+    $count = 0;
+    while($count < 4 && $row = mysql_fetch_assoc($pro_item)){
        echo '
        <li> <img src="'. $pro_path_img_slider . $row["pro_image"] .'">
                     <!--<div class="inf_slider">
@@ -61,15 +62,17 @@ if(mysql_num_rows($pro_item) <> 0){
           <span class="content">' . $row["pro_detail"] . '</span> </div>-->
        </li>
         ';
+        $count++;
     }
 }
 }
 
 
 function pro_sub_slider($pro_path_img,$pro_file_img){
-    $pro_item = mysql_query("SELECT * FROM products");
+    $pro_item = mysql_query("SELECT * FROM products ORDER BY pro_rate DESC");
 if(mysql_num_rows($pro_item) <> 0){
-    while($row = mysql_fetch_assoc($pro_item)){
+    $count = 0;
+    while($count < 8 && $row = mysql_fetch_assoc($pro_item)){
        echo '
         <li class="cty-col">
             <div><img src="'. $pro_path_img . $row["pro_image"] .'">
@@ -78,14 +81,16 @@ if(mysql_num_rows($pro_item) <> 0){
             </div>
         </li>
         ';
+        $count++;
     }
 }
 }
 
 function pro_new($pro_path_img,$pro_file_img){
-    $pro_item = mysql_query("SELECT * FROM products");
+    $pro_item = mysql_query("SELECT * FROM products ORDER BY pro_id");
 if(mysql_num_rows($pro_item) <> 0){
-    while($row = mysql_fetch_assoc($pro_item)){
+    $count = 0;
+    while($count < 6 && $row = mysql_fetch_assoc($pro_item)){
         echo'
         <li>
                                 <a href="product-detail.php?proCode='.$row["pro_code"].'">
@@ -97,6 +102,7 @@ if(mysql_num_rows($pro_item) <> 0){
                                 </a>
                             </li>
         ';
+        $count++;
     }
 }
 }
@@ -134,7 +140,8 @@ function pro_list_seafood($pro_path_img,$pro_file_img){
                         <li>
                             <span><strong>'.$row["pro_name"].'</strong></span><span>&nbsp;&nbsp;</span>
                             <span>ngay: '.$row["pro_insert_date"].'</span><span>&nbsp;&nbsp;</span>
-                            <span>gia: '.$row["pro_price_total"].'</span>
+                            <span>gia: '.$row["pro_price_total"].'</span><span>&nbsp;&nbsp;</span>
+                            <span>danh gia: '.$row["pro_rate"].'</span>
                             <div>
                                 <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a>
                                 <span> - </span>
@@ -159,8 +166,8 @@ function pro_list_seafood($pro_path_img,$pro_file_img){
                             <li><label>Thương Hiệu<br><input type="text" name="pro_brand" value="'.$row["pro_brand"].'"></label></li>
                             <li><label>Tổng số lượng (kg), (cái), ...<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
                             <li><label>Nhập nội dung<br><textarea name="pro_detail" cols="60" rows="7">'.$row["pro_detail"].'</textarea></label></li>
-                            <li><label>Người viết<br><input type="text" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
-                            <li><label>Ngày nhập<br><input type="hidden" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
+                            <li><label><input type="hidden" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
+                            <li><label><input type="hidden" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
                             <li><label>Hạn sử dụng<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
                             <li><label>Đánh giá<br><input type="number" name="pro_rate" value="'.$row["pro_rate"].'"></label></li>
                             <li><label>Giá sản phẩm (vnd)<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
@@ -202,7 +209,8 @@ function pro_list_food($pro_path_img,$pro_file_img){
                         <li>
                             <span><strong>'.$row["pro_name"].'</strong></span><span>&nbsp;&nbsp;</span>
                             <span>ngay: '.$row["pro_insert_date"].'</span><span>&nbsp;&nbsp;</span>
-                            <span>gia: '.$row["pro_price_total"].'</span>
+                            <span>gia: '.$row["pro_price_total"].'</span><span>&nbsp;&nbsp;</span>
+                            <span>danh gia: '.$row["pro_rate"].'</span>
                             <div>
                                 <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a>
                                 <span> - </span>
@@ -227,8 +235,8 @@ function pro_list_food($pro_path_img,$pro_file_img){
                             <li><label>Thương Hiệu<br><input type="text" name="pro_brand" value="'.$row["pro_brand"].'"></label></li>
                             <li><label>Tổng số lượng (kg), (cái), ...<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
                             <li><label>Nhập nội dung<br><textarea name="pro_detail" cols="60" rows="7">'.$row["pro_detail"].'</textarea></label></li>
-                            <li><label>Người viết<br><input type="text" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
-                            <li><label>Ngày nhập<br><input type="hidden" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
+                            <li><label><input type="hidden" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
+                            <li><label><input type="hidden" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
                             <li><label>Hạn sử dụng<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
                             <li><label>Đánh giá<br><input type="number" name="pro_rate" value="'.$row["pro_rate"].'"></label></li>
                             <li><label>Giá sản phẩm (vnd)<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
@@ -270,7 +278,8 @@ function pro_list_other($pro_path_img,$pro_file_img){
                         <li>
                             <span><strong>'.$row["pro_name"].'</strong></span><span>&nbsp;&nbsp;</span>
                             <span>ngay: '.$row["pro_insert_date"].'</span><span>&nbsp;&nbsp;</span>
-                            <span>gia: '.$row["pro_price_total"].'</span>
+                            <span>gia: '.$row["pro_price_total"].'</span><span>&nbsp;&nbsp;</span>
+                            <span>danh gia: '.$row["pro_rate"].'</span>
                             <div>
                                 <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a>
                                 <span> - </span>
@@ -295,8 +304,8 @@ function pro_list_other($pro_path_img,$pro_file_img){
                             <li><label>Thương Hiệu<br><input type="text" name="pro_brand" value="'.$row["pro_brand"].'"></label></li>
                             <li><label>Tổng số lượng (kg), (cái), ...<br><input type="number" name="pro_amount" value="'.$row["pro_amount"].'"></label></li>
                             <li><label>Nhập nội dung<br><textarea name="pro_detail" cols="60" rows="7">'.$row["pro_detail"].'</textarea></label></li>
-                            <li><label>Người viết<br><input type="text" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
-                            <li><label>Ngày nhập<br><input type="hidden" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
+                            <li><label><input type="hidden" name="pro_writer" value="'.$row["pro_writer"].'" readonly></label></li>
+                            <li><label><input type="hidden" name="pro_insert_date" value="'.$row["pro_insert_date"].'" readonly></label></li>
                             <li><label>Hạn sử dụng<br><input type="date" name="pro_expired" value="'.$row["pro_expired"].'"></label></li>
                             <li><label>Đánh giá<br><input type="number" name="pro_rate" value="'.$row["pro_rate"].'"></label></li>
                             <li><label>Giá sản phẩm (vnd)<br><input type="number" name="pro_price" value="'.$row["pro_price"].'"></label></li>
@@ -349,7 +358,7 @@ function pro_create($pro_path_img,$pro_file_img,$user_firstname){
                             <li><label>Thương Hiệu<br><input type="text" name="pro_brand"></label></li>
                             <li><label>Tổng số lượng (kg), (cái), ...<br><input type="number" name="pro_amount" ></label></li>
                             <li><label>Nhập nội dung<br><textarea id="noise" class="widgEditor nothing" name="pro_detail" cols="60" rows="7">nhap text</textarea></label></li>
-                            <li><label>Người viết<br><input type="text" name="pro_writer" value="'.$user_firstname.'" readonly></label></li>
+                            <li><label><input type="hidden" name="pro_writer" value="'.$user_firstname.'" readonly></label></li>
                             <li><label>Hạn sử dụng<br><input type="date" name="pro_expired"></label></li>
                             <li><label>Đánh giá<br><input type="number" name="pro_rate" value="0"></label></li>
                             <li><label>Giá sản phẩm (vnd)<br><input type="number" name="pro_price"></label></li>
