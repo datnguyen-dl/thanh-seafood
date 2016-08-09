@@ -19,14 +19,15 @@
             </div>
             <div class="cty-col cty-tR"><a href="product.php">Xem thêm >></a></div>
         </div>
-        <div class="cty-grid slider-container">
-            <button><i class="material-icons">chevron_left</i></button>
-            <button><i class="material-icons">chevron_right</i></button>
-            <div class="content-slider">
-                <ul class="cty-row4">
+        <div class="slider-container">
+            <button class="cty-left-btn"><i class="material-icons">chevron_left</i></button>
+            <button class="cty-right-btn"><i class="material-icons">chevron_right</i></button>
+            <div class="slider-content">
+                <ul>
                     <?php pro_sub_slider($pro_path_img,$pro_file_img); ?>
                 </ul>
             </div>
+
         </div>
     </div>
 </div>
@@ -101,7 +102,7 @@
                 <div class="title">
                     <h4>Social</h4></div>
                 <div class="content">
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fweshark.net%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1254884917874897" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    <!--<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fweshark.net%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1254884917874897" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>-->
                 </div>
             </div>
         </div>

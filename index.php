@@ -22,5 +22,3 @@
 ?>
 
 <?php include 'includes/overall/footer.php'; ?>
-
-

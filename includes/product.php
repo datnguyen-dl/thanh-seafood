@@ -74,7 +74,7 @@ if(mysql_num_rows($pro_item) <> 0){
     $count = 0;
     while($count < 8 && $row = mysql_fetch_assoc($pro_item)){
        echo '
-        <li class="cty-col">
+        <li>
             <div><img src="'. $pro_path_img . $row["pro_image"] .'">
                 <div class="pro-info">
                     <span>' . $row["pro_name"] . '</span> <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a></div>

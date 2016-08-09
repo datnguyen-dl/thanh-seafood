@@ -110,7 +110,9 @@ body {
                     color: @brand-primary;
                 }
             }
-            & > .cty-grid {
+            & > .slider-container {
+                .cty-pR;
+                .cty-w100per;
                 padding: 0 30px;
                 float: left;
                 button {
@@ -128,11 +130,21 @@ body {
                         right: 0px;
                     }
                 }
-                & > .content-slider {
+                & > .slider-content {
+                    .cty-pR;
+                    overflow: hidden;
                     & > ul {
+                        .cty-pR;
                         .cty-dB;
+                        .cty-cFix;
+                        left: 0px;
                         & > li {
+                            .cty-fL;
+                            padding: 10px;
+                            width: 230px;
+                            height: 230px;
                             & > div {
+                                .cty-pR;
                                 &:nth-child(1) {
                                     width: 100%;
                                     height: 100%;
