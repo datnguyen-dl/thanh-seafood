@@ -50,16 +50,20 @@ if(mysql_num_rows($pro_item) <> 0){
 }
 }
 
-function pro_slider($pro_path_img_slider,$pro_file_img){
+function pro_header_slider($pro_path_img_slider,$pro_file_img){
     $pro_item = mysql_query("SELECT * FROM products ORDER BY pro_id");
 if(mysql_num_rows($pro_item) <> 0){
     $count = 0;
     while($count < 4 && $row = mysql_fetch_assoc($pro_item)){
        echo '
-       <li> <img src="'. $pro_path_img_slider . $row["pro_image"] .'">
-                    <!--<div class="inf_slider">
+       <li>
+       <div>
+       <img src="'. $pro_path_img_slider . $row["pro_image"] .'">
+          <div class="pro-info">
           <h3 class="title">' . $row["pro_name"] . '</h3>
-          <span class="content">' . $row["pro_detail"] . '</span> </div>-->
+          <span class="content">' . $row["pro_detail"] . '</span> </div>
+       </div>
+       
        </li>
         ';
         $count++;
