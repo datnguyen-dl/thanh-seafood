@@ -2,15 +2,26 @@
 
 //index
 function pro_seafood($pro_path_img,$pro_file_img){
-    $pro_item = mysql_query("SELECT * FROM products WHERE pro_type = 0");
+    $pro_item = mysql_query("SELECT * FROM products  WHERE pro_type = 0 ORDER BY pro_insert_date DESC");
 if(mysql_num_rows($pro_item) <> 0){
     while($row = mysql_fetch_assoc($pro_item)){
 
        echo '
         <li class="cty-col">
-            <div><img src="'. $pro_path_img . $row["pro_image"] .'">
-                <div class="pro-info">
-                    <span>' . $row["pro_name"] . '</span> <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a></div>
+            <div>
+                <img src="'. $pro_path_img . $row["pro_image"] .'">
+                <a href="product-detail.php?proCode='.$row["pro_code"].'" class="pro-info">
+                    <span>' . $row["pro_name"] . '</span>
+                    <span>' . number_format(($row["pro_price_total"]),0,".",".") . ' VND</span>
+            ';        
+                    if($row["pro_saleoff"] > 0){
+                        echo ' <span>' . number_format(($row["pro_price"]),0,".",".") . ' VND</span>
+                    <span> -' .$row["pro_saleoff"]. '%</span>';
+                    }
+                   
+                    
+            echo '             
+                </a>
             </div>
         </li>
         ';
@@ -19,14 +30,25 @@ if(mysql_num_rows($pro_item) <> 0){
 }
 
 function pro_food($pro_path_img,$pro_file_img){
-    $pro_item = mysql_query("SELECT * FROM products WHERE pro_type = 1");
+    $pro_item = mysql_query("SELECT * FROM products WHERE pro_type = 1 ORDER BY pro_insert_date DESC");
 if(mysql_num_rows($pro_item) <> 0){
     while($row = mysql_fetch_assoc($pro_item)){
        echo '
         <li class="cty-col">
-            <div><img src="'. $pro_path_img . $row["pro_image"] .'">
-                <div class="pro-info">
-                    <span>' . $row["pro_name"] . '</span> <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a></div>
+            <div>
+                <img src="'. $pro_path_img . $row["pro_image"] .'">
+                <a href="product-detail.php?proCode='.$row["pro_code"].'" class="pro-info">
+                    <span>' . $row["pro_name"] . '</span>
+                    <span>' . number_format(($row["pro_price_total"]),0,".",".") . ' VND</span>
+            ';        
+                    if($row["pro_saleoff"] > 0){
+                        echo ' <span>' . number_format(($row["pro_price"]),0,".",".") . ' VND</span>
+                    <span> -' .$row["pro_saleoff"]. '%</span>';
+                    }
+                   
+                    
+            echo '             
+                </a>
             </div>
         </li>
         ';
@@ -35,14 +57,25 @@ if(mysql_num_rows($pro_item) <> 0){
 }
 
 function pro_other($pro_path_img,$pro_file_img){
-    $pro_item = mysql_query("SELECT * FROM products WHERE pro_type = 2");
+    $pro_item = mysql_query("SELECT * FROM products WHERE pro_type = 2 ORDER BY pro_insert_date DESC");
 if(mysql_num_rows($pro_item) <> 0){
     while($row = mysql_fetch_assoc($pro_item)){
        echo '
         <li class="cty-col">
-            <div><img src="'. $pro_path_img . $row["pro_image"] .'">
-                <div class="pro-info">
-                    <span>' . $row["pro_name"] . '</span> <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a></div>
+            <div>
+                <img src="'. $pro_path_img . $row["pro_image"] .'">
+                <a href="product-detail.php?proCode='.$row["pro_code"].'" class="pro-info">
+                    <span>' . $row["pro_name"] . '</span>
+                    <span>' . number_format(($row["pro_price_total"]),0,".",".") . ' VND</span>
+            ';        
+                    if($row["pro_saleoff"] > 0){
+                        echo ' <span>' . number_format(($row["pro_price"]),0,".",".") . ' VND</span>
+                    <span> -' .$row["pro_saleoff"]. '%</span>';
+                    }
+                   
+                    
+            echo '             
+                </a>
             </div>
         </li>
         ';
@@ -79,9 +112,20 @@ if(mysql_num_rows($pro_item) <> 0){
     while($count < 8 && $row = mysql_fetch_assoc($pro_item)){
        echo '
         <li>
-            <div><img src="'. $pro_path_img . $row["pro_image"] .'">
-                <div class="pro-info">
-                    <span>' . $row["pro_name"] . '</span> <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a></div>
+            <div>
+                <img src="'. $pro_path_img . $row["pro_image"] .'">
+                <a href="product-detail.php?proCode='.$row["pro_code"].'" class="pro-info">
+                    <span>' . $row["pro_name"] . '</span>
+                    <span>' . number_format(($row["pro_price_total"]),0,".",".") . ' VND</span>
+            ';        
+                    if($row["pro_saleoff"] > 0){
+                        echo ' <span>' . number_format(($row["pro_price"]),0,".",".") . ' VND</span>
+                    <span> -' .$row["pro_saleoff"]. '%</span>';
+                    }
+                   
+                    
+            echo '             
+                </a>
             </div>
         </li>
         ';
@@ -89,7 +133,7 @@ if(mysql_num_rows($pro_item) <> 0){
     }
 }
 }
-
+//<a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a>
 function pro_new($pro_path_img,$pro_file_img){
     $pro_item = mysql_query("SELECT * FROM products ORDER BY pro_id");
 if(mysql_num_rows($pro_item) <> 0){
@@ -144,7 +188,9 @@ function pro_list_seafood($pro_path_img,$pro_file_img){
                         <li>
                             <span><strong>'.$row["pro_name"].'</strong></span><span>&nbsp;&nbsp;</span>
                             <span>ngay: '.$row["pro_insert_date"].'</span><span>&nbsp;&nbsp;</span>
-                            <span>gia: '.$row["pro_price_total"].'</span><span>&nbsp;&nbsp;</span>
+                            <span>gia: '. number_format(($row["pro_price"]),0,".",".") .' VND</span><span>&nbsp;&nbsp;</span>
+                            <span>giam gia: '.$row["pro_saleoff"].'%</span><span>&nbsp;&nbsp;</span>
+                            <span>gia da giam: '.number_format(($row["pro_price_total"]),0,".",".").' VND</span><span>&nbsp;&nbsp;</span>
                             <span>danh gia: '.$row["pro_rate"].'</span>
                             <div>
                                 <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a>
@@ -213,7 +259,9 @@ function pro_list_food($pro_path_img,$pro_file_img){
                         <li>
                             <span><strong>'.$row["pro_name"].'</strong></span><span>&nbsp;&nbsp;</span>
                             <span>ngay: '.$row["pro_insert_date"].'</span><span>&nbsp;&nbsp;</span>
-                            <span>gia: '.$row["pro_price_total"].'</span><span>&nbsp;&nbsp;</span>
+                            <span>gia: '. number_format(($row["pro_price"]),0,".",".") .' VND</span><span>&nbsp;&nbsp;</span>
+                            <span>giam gia: '.$row["pro_saleoff"].'%</span><span>&nbsp;&nbsp;</span>
+                            <span>gia da giam: '.number_format(($row["pro_price_total"]),0,".",".").' VND</span><span>&nbsp;&nbsp;</span>
                             <span>danh gia: '.$row["pro_rate"].'</span>
                             <div>
                                 <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a>
@@ -282,7 +330,9 @@ function pro_list_other($pro_path_img,$pro_file_img){
                         <li>
                             <span><strong>'.$row["pro_name"].'</strong></span><span>&nbsp;&nbsp;</span>
                             <span>ngay: '.$row["pro_insert_date"].'</span><span>&nbsp;&nbsp;</span>
-                            <span>gia: '.$row["pro_price_total"].'</span><span>&nbsp;&nbsp;</span>
+                            <span>gia: '. number_format(($row["pro_price"]),0,".",".") .' VND</span><span>&nbsp;&nbsp;</span>
+                            <span>giam gia: '.$row["pro_saleoff"].'%</span><span>&nbsp;&nbsp;</span>
+                            <span>gia da giam: '.number_format(($row["pro_price_total"]),0,".",".").' VND</span><span>&nbsp;&nbsp;</span>
                             <span>danh gia: '.$row["pro_rate"].'</span>
                             <div>
                                 <a href="product-detail.php?proCode='.$row["pro_code"].'">Chi tiết</a>
