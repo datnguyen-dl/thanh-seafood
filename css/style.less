@@ -18,18 +18,21 @@ body {
 }
 
 #top-bar {
+    .cty-tR;
     padding: 5px 0;
     background-color: @gray-dark;
     color: white;
-    .cty-tR;
-    span {
-        margin-left: 10px;
-        &:nth-child(1) {
-            color: @brand-warning;
-        }
-        &:nth-child(2) {
-            color: #828282;
-            margin-left: 20px;
+    & > div {
+        padding-right: 10px;
+        span {
+            margin-left: 10px;
+            &:nth-child(1) {
+                color: @brand-warning;
+            }
+            &:nth-child(2) {
+                color: #828282;
+                margin-left: 20px;
+            }
         }
     }
 }
@@ -50,6 +53,7 @@ body {
         background-position: center;
         width: 70px;
         height: 70px;
+        margin-left: 10px;
     }
     .main_menu {
         .cty-pA;
@@ -103,7 +107,6 @@ body {
         & > .content {
             .title {
                 .cty-cFix;
-                margin-top: 10px;
                 h4 {
                     color: @brand-primary;
                 }
@@ -184,6 +187,7 @@ body {
             .board-info {
                 .cty-pA;
                 bottom: 100px;
+                left: 10px;
                 background-color: rgba(0, 0, 0, 0.5);
                 padding: 20px;
                 color: white;
@@ -220,7 +224,6 @@ body {
         border-bottom: 1px solid @gray-lighter;
         margin-bottom: 20px;
         .title {
-            margin-bottom: 10px;
             h4 {
                 .cty-ttU;
                 color: @brand-primary;
@@ -232,7 +235,7 @@ body {
     }
     .side-left {
         float: left;
-        width: 620px;
+        width: 640px;
         .container {
             .content {
                 .video {
@@ -273,7 +276,7 @@ body {
                                 .cty-oH;
                                 background-color: white;
                                 img {
-                                    height: 100%;
+                                    width: 100%;
                                 }
                             }
                             .content {
@@ -314,9 +317,13 @@ header {
 .list-product {
     .content {
         margin-bottom: 10px;
-        .cty-grid {
+        & > .title {
+            .cty-p10;
+        }
+        & > .cty-grid {
             & > ul {
                 & > li {
+                    .cty-p10;
                     & > div {
                         .cty-cP;
                         width: 100%;

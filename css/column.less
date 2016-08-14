@@ -1,28 +1,26 @@
 .cty-row1, .cty-row2, .cty-row3, .cty-row4, .cty-row5, .cty-row6{.cty-pR; .cty-cFix; .cty-dB; width: 100%;}
 .cty-col{.cty-fL; .cty-dB; .cty-pR;}
-.cty-row1 .cty-col{width: 100% / 1;}
-.cty-row2 .cty-col{width: 100% / 2;}
-.cty-row3 .cty-col{width: 100% / 3;}
-.cty-row4 .cty-col{width: 100% / 4;}
-.cty-row5 .cty-col{width: 100% / 5;}
-.cty-row6 .cty-col{width: 100% / 6;}
+.cty-row1>li{width: 100% / 1;}
+.cty-row2>li{width: 100% / 2;}
+.cty-row3>li{width: 100% / 3;}
+.cty-row4>li{width: 100% / 4;}
+.cty-row5>li{width: 100% / 5;}
+.cty-row6>li{width: 100% / 6;}
 
 .cty-grid{
 			.cty-pR;
 			.cty-cFix;
 			width: 100%;
-			//padding: 10px;
-			//background-color:#ff0;
-			ul{
+			& > ul{
+                .cty-cFix;
 				display: block;
 				width: 100%;
-				li{
-					padding: 10px;
-					//background-color: #f0f;
-					div{
+				& > li{
+                    .cty-pR;
+                    .cty-fL;
+					& > div{
 						&:nth-child(1){
 							position: relative;
-							//background-color:#0ff;
 							width: 100%;
 						}
 					}

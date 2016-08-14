@@ -1,90 +1,122 @@
 <?php
 
-//index
+//PRODUCT
 function pro_seafood($pro_path_img,$pro_file_img){
     $pro_item = mysql_query("SELECT * FROM products  WHERE pro_type = 0 ORDER BY pro_insert_date DESC");
 if(mysql_num_rows($pro_item) <> 0){
-    while($row = mysql_fetch_assoc($pro_item)){
+    echo'
+    <div class="content">
+                        <div class="title">
+                            <h4>Sản Phẩm Chính</h4></div>
+                        <div class="cty-grid">
+                            <ul class="cty-row4">';
+                        while($row = mysql_fetch_assoc($pro_item)){
+                           echo '
+                            <li>
+                                <div>
+                                    <img src="'. $pro_path_img . $row["pro_image"] .'">
+                                    <a href="product-detail.php?proCode='.$row["pro_code"].'" class="pro-info">
+                                        <span>' . $row["pro_name"] . '</span>
+                                        <span>' . number_format(($row["pro_price_total"]),0,".",".") . ' VND</span>
+                                ';        
+                                        if($row["pro_saleoff"] > 0){
+                                            echo ' <span>' . number_format(($row["pro_price"]),0,".",".") . ' VND</span>
+                                        <span> -' .$row["pro_saleoff"]. '%</span>';
+                                        }
 
-       echo '
-        <li class="cty-col">
-            <div>
-                <img src="'. $pro_path_img . $row["pro_image"] .'">
-                <a href="product-detail.php?proCode='.$row["pro_code"].'" class="pro-info">
-                    <span>' . $row["pro_name"] . '</span>
-                    <span>' . number_format(($row["pro_price_total"]),0,".",".") . ' VND</span>
-            ';        
-                    if($row["pro_saleoff"] > 0){
-                        echo ' <span>' . number_format(($row["pro_price"]),0,".",".") . ' VND</span>
-                    <span> -' .$row["pro_saleoff"]. '%</span>';
-                    }
-                   
-                    
-            echo '             
-                </a>
-            </div>
-        </li>
-        ';
-    }
+
+                                echo '             
+                                    </a>
+                                </div>
+                            </li>
+                            ';
+                        }
+     echo'                        </ul>
+                        </div>
+                    </div>
+    
+    ';
 }
 }
 
 function pro_food($pro_path_img,$pro_file_img){
     $pro_item = mysql_query("SELECT * FROM products WHERE pro_type = 1 ORDER BY pro_insert_date DESC");
 if(mysql_num_rows($pro_item) <> 0){
-    while($row = mysql_fetch_assoc($pro_item)){
-       echo '
-        <li class="cty-col">
-            <div>
-                <img src="'. $pro_path_img . $row["pro_image"] .'">
-                <a href="product-detail.php?proCode='.$row["pro_code"].'" class="pro-info">
-                    <span>' . $row["pro_name"] . '</span>
-                    <span>' . number_format(($row["pro_price_total"]),0,".",".") . ' VND</span>
-            ';        
-                    if($row["pro_saleoff"] > 0){
-                        echo ' <span>' . number_format(($row["pro_price"]),0,".",".") . ' VND</span>
-                    <span> -' .$row["pro_saleoff"]. '%</span>';
-                    }
-                   
-                    
-            echo '             
-                </a>
-            </div>
-        </li>
-        ';
-    }
+    echo'
+    <div class="content">
+                        <div class="title">
+                            <h4>Gia Cầm</h4></div>
+                        <div class="cty-grid">
+                            <ul class="cty-row4">';
+                        while($row = mysql_fetch_assoc($pro_item)){
+                           echo '
+                            <li>
+                                <div>
+                                    <img src="'. $pro_path_img . $row["pro_image"] .'">
+                                    <a href="product-detail.php?proCode='.$row["pro_code"].'" class="pro-info">
+                                        <span>' . $row["pro_name"] . '</span>
+                                        <span>' . number_format(($row["pro_price_total"]),0,".",".") . ' VND</span>
+                                ';        
+                                        if($row["pro_saleoff"] > 0){
+                                            echo ' <span>' . number_format(($row["pro_price"]),0,".",".") . ' VND</span>
+                                        <span> -' .$row["pro_saleoff"]. '%</span>';
+                                        }
+
+
+                                echo '             
+                                    </a>
+                                </div>
+                            </li>
+                            ';
+                        }
+     echo'                        </ul>
+                        </div>
+                    </div>
+    
+    ';
 }
 }
 
 function pro_other($pro_path_img,$pro_file_img){
     $pro_item = mysql_query("SELECT * FROM products WHERE pro_type = 2 ORDER BY pro_insert_date DESC");
 if(mysql_num_rows($pro_item) <> 0){
-    while($row = mysql_fetch_assoc($pro_item)){
-       echo '
-        <li class="cty-col">
-            <div>
-                <img src="'. $pro_path_img . $row["pro_image"] .'">
-                <a href="product-detail.php?proCode='.$row["pro_code"].'" class="pro-info">
-                    <span>' . $row["pro_name"] . '</span>
-                    <span>' . number_format(($row["pro_price_total"]),0,".",".") . ' VND</span>
-            ';        
-                    if($row["pro_saleoff"] > 0){
-                        echo ' <span>' . number_format(($row["pro_price"]),0,".",".") . ' VND</span>
-                    <span> -' .$row["pro_saleoff"]. '%</span>';
-                    }
-                   
-                    
-            echo '             
-                </a>
-            </div>
-        </li>
-        ';
-    }
-}
-}
+    echo'
+    <div class="content">
+                        <div class="title">
+                            <h4>Sản Phẩm Khác</h4></div>
+                        <div class="cty-grid">
+                            <ul class="cty-row4">';
+                        while($row = mysql_fetch_assoc($pro_item)){
+                           echo '
+                            <li>
+                                <div>
+                                    <img src="'. $pro_path_img . $row["pro_image"] .'">
+                                    <a href="product-detail.php?proCode='.$row["pro_code"].'" class="pro-info">
+                                        <span>' . $row["pro_name"] . '</span>
+                                        <span>' . number_format(($row["pro_price_total"]),0,".",".") . ' VND</span>
+                                ';        
+                                        if($row["pro_saleoff"] > 0){
+                                            echo ' <span>' . number_format(($row["pro_price"]),0,".",".") . ' VND</span>
+                                        <span> -' .$row["pro_saleoff"]. '%</span>';
+                                        }
 
+
+                                echo '             
+                                    </a>
+                                </div>
+                            </li>
+                            ';
+                        }
+     echo'                        </ul>
+                        </div>
+                    </div>
+    
+    ';
+}
+}
+//HEADER SLIDER
 function pro_header_slider($pro_path_img_slider,$pro_file_img){
-    $pro_item = mysql_query("SELECT * FROM products ORDER BY pro_id");
+    $pro_item = mysql_query("SELECT * FROM products ORDER BY pro_rate DESC");
 if(mysql_num_rows($pro_item) <> 0){
     $count = 0;
     while($count < 4 && $row = mysql_fetch_assoc($pro_item)){
@@ -104,7 +136,7 @@ if(mysql_num_rows($pro_item) <> 0){
 }
 }
 
-
+//SUB SLIDER
 function pro_sub_slider($pro_path_img,$pro_file_img){
     $pro_item = mysql_query("SELECT * FROM products ORDER BY pro_rate DESC");
 if(mysql_num_rows($pro_item) <> 0){

@@ -10,13 +10,13 @@
 
 <!--product-favourite-->
 <div class="container pro-fav">
-    <div class="content cty-sWMain">
-        <div class="title cty-row2">
-            <div class="cty-col cty-tU">
+    <div class="content cty-sWMain cty-pLR10">
+        <ul class="title cty-row2 ">
+            <li class="cty-col cty-tU">
                 <h4>SẢN PHẨM ĐƯỢC ƯA CHUỘNG</h4>
-            </div>
-            <div class="cty-col cty-tR"><a href="product.php">Xem thêm >></a></div>
-        </div>
+            </li>
+            <li class="cty-col cty-tR"><a href="product.php">Xem thêm >></a></li>
+        </ul>
         <div id="cty-sub-slider" class="cty-sub-slider">
             <button class="cty-trigger cty-prev-btn"><i class="material-icons">chevron_left</i></button>
             <button class="cty-trigger cty-next-btn"><i class="material-icons">chevron_right</i></button>
@@ -44,7 +44,9 @@
 </div>
 <!--main-content-->
 <div class="wrapper">
-    <div class="cty-sWMain">
+    <div class="cty-sWMain cty-pLR10">
+       
+<!--       SIDE LEFT-->
         <div class="side-left">
             <!--video-->
             <div class="container video">
@@ -52,8 +54,11 @@
                     <h4>Video</h4>
                 </div>
                 <div class="content">
-                    <div class="video">
+                    <div class="video cty-pTB10">
                         <iframe src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1, no-loop"> </iframe>
+                    </div>
+                    <div>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
                     </div>
                 </div>
             </div>
@@ -62,7 +67,7 @@
                 <div class="title">
                     <h4>Về chúng tôi</h4>
                 </div>
-                <div class="content">
+                <div class="content cty-pTB10">
                     <p><strong class="cty-tU">DNTN Nguyệt Anh</strong>
                         <br> Kính Chào Quý Khách
                         <br>
@@ -79,12 +84,13 @@
                 </div>
             </div>
         </div>
+<!--        SIDE RIGHT-->
         <div class="side-right">
             <!--other-product-->
             <div class="container other-pro">
                 <div class="title">
                     <h4>Sản Phẩm Khác</h4></div>
-                <div class="content">
+                <div class="content cty-pTB10">
                     <ol class="list-items">
                         <?php pro_new($pro_path_img,$pro_file_img); ?>
 
@@ -98,7 +104,7 @@
             <div class="container social">
                 <div class="title">
                     <h4>Social</h4></div>
-                <div class="content">
+                <div class="content cty-pTB10">
                     <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fweshark.net%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1254884917874897" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                 </div>
             </div>
